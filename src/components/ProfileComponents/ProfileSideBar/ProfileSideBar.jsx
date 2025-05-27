@@ -91,7 +91,7 @@ const ProfileSideBar = ({ selectedComponent, setSelectedComponent }) => {
             <FaBookReader />
             آزمون‌های من
           </button>
-          <button
+          {/* <button
             onClick={() => {
               setSelectedComponent("suggested");
               setIsSidebarOpen(false);
@@ -101,8 +101,8 @@ const ProfileSideBar = ({ selectedComponent, setSelectedComponent }) => {
             <BsQrCode />
             کارت ورود به جلسه
             <span>(آزمون کتبی)</span>
-          </button>
-          <button
+          </button> */}
+          {/* <button
             onClick={() => {
               setSelectedComponent("DocumentReview");
               setIsSidebarOpen(false);
@@ -112,7 +112,7 @@ const ProfileSideBar = ({ selectedComponent, setSelectedComponent }) => {
             <IoDocuments />
             نتیجه‌ی بررسی مدارک
             <span className="docNotifNum">1</span>
-          </button>
+          </button> */}
           <button
             onClick={() => {
               setSelectedComponent("news");
@@ -124,7 +124,7 @@ const ProfileSideBar = ({ selectedComponent, setSelectedComponent }) => {
             کارت ورود به جلسه
             <span>(ارزیابی تکمیلی)</span>
           </button>
-          <button
+          {/* <button
             onClick={() => {
               setSelectedComponent("selection");
               setIsSidebarOpen(false);
@@ -133,7 +133,7 @@ const ProfileSideBar = ({ selectedComponent, setSelectedComponent }) => {
           >
             <FaCheckCircle />
             گزینش
-          </button>
+          </button> */}
         </div>
       </div>
     </>
