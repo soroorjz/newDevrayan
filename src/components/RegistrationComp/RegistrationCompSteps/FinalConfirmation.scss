@@ -1,0 +1,178 @@
+@import "../../../styles/responsive.scss";
+$tablet-resize: 900px;
+
+.exam-payment-form {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  @include responsive($tablet) {
+    width: 85%;
+    height: 70vh;
+  }
+  .examPaymenTitle {
+    text-align: center;
+    color: #04364a;
+    margin-bottom: 10px;
+  }
+  .exam-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    h2 {
+      span {
+        color: #555;
+        font-size: 18px;
+        margin-right: 5px;
+      }
+    }
+  }
+  .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    label {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+    span {
+      .bookletDownload {
+        color: #e55604;
+        font-size: 12px;
+      }
+    }
+  }
+  .payment-method {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    .payment-method-Title {
+      color: rgb(83, 86, 92);
+    }
+    img {
+      width: 24px;
+      height: 24px;
+    }
+    label {
+      border: 1px solid rgba(58, 61, 66, 0.06);
+      border-radius: 0.375rem;
+      display: flex;
+      align-items: center;
+      min-height: 4.5rem;
+      padding: 0px 1rem;
+      justify-content: space-between;
+
+      .rightPart {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        .paymentMethodDesc {
+          display: flex;
+          flex-direction: column;
+          p {
+            color: rgb(58, 61, 66);
+            font-weight: 700;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+          }
+          span {
+            font-size: 12px;
+            color: rgb(83, 86, 92);
+            font-weight: 400;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+          }
+        }
+      }
+    }
+  }
+  .exam-paymentBtns {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 50px;
+    @include responsive($tablet) {
+      justify-content: flex-end;
+    }
+    .submit-button {
+      @include responsive($tablet) {
+        width: 20%;
+      }
+      display: block;
+      margin: 20px 0;
+      padding: 12px;
+      background: #04364a;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: #e55604;
+      }
+    }
+    .disabled-button {
+      background: #04364ac9;
+      cursor: not-allowed;
+      &:hover {
+        background-color: #555555a4;
+      }
+    }
+  }
+}
+
+// Modal Styles
+.fc-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fcFadeIn 0.3s ease-in-out;
+}
+
+.fc-modal-container {
+  // background: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 90%;
+  // max-width: 500px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: fcSlideIn 0.3s ease-in-out;
+  height: 100%;
+  overflow: auto;
+}
+
+// Animations
+@keyframes fcFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fcSlideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

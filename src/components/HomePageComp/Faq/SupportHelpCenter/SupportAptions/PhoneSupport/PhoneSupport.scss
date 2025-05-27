@@ -1,0 +1,74 @@
+@import "../../../../../../styles/responsive.scss";
+
+.support-container {
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  direction: rtl;
+  @include responsive($tablet) {
+    width: 70%;
+  }
+  .support-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .phone-support-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+
+    .support-input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      width: 100%;
+      @include responsive($tablet) {
+        width: 40%;
+      }
+    }
+
+    .support-select {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      background: white;
+      cursor: pointer;
+      width: 100%;
+      @include responsive($tablet) {
+        width: 30%;
+      }
+    }
+
+    .support-button {
+      background-color: #04364a;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: #e55604;
+      }
+    }
+  }
+
+  .support-message {
+    background-color: #e5effc;
+    color: #333;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: justify;
+  }
+}

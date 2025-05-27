@@ -1,0 +1,245 @@
+@import "../../../styles/responsive.scss";
+$tablet-resize: 900px;
+
+.job-selection-residency {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  @include responsive($tablet) {
+    width: 80%;
+  }
+
+  .rules {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    color: #505050;
+  }
+
+  .selection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    p {
+      svg {
+        color: #e55604;
+        margin-left: 3px;
+      }
+
+      .residency-select {
+        padding: 5px;
+        margin: 0 3px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  .boomi-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .OathPart {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #505050;
+      cursor: pointer;
+    }
+
+    .download-link {
+      color: #505050;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      svg {
+        margin-left: 3px;
+      }
+
+      &:hover {
+        color: #000;
+      }
+    }
+
+    .upload-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      border: 2px dashed #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      width: max-content;
+
+      .upload-label {
+        font-size: 14px;
+        color: #505050;
+        cursor: pointer;
+      }
+
+      .error-message {
+        color: red;
+        font-size: 12px;
+      }
+
+      .preview {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        position: relative;
+
+        .preview-image {
+          width: 50px;
+          height: 50px;
+          border-radius: 5px;
+          object-fit: cover;
+        }
+
+        .remove-preview {
+          background-color: #e74c3c;
+          color: #fff;
+          width: 20px;
+          height: 20px;
+          border: none;
+          padding: 4px;
+          top: 0;
+          left: 0;
+          position: absolute;
+          border-radius: 50%;
+          cursor: pointer;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .SelectRegionSubmitBtns {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+    margin-bottom: 50px;
+    @include responsive($tablet) {
+      justify-content: flex-end;
+    }
+    button {
+      display: block;
+      margin: 20px 0;
+      padding: 12px;
+      background: #04364a;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+
+      @include responsive($tablet) {
+        width: 20%;
+      }
+
+      &:hover {
+        background: #e55604;
+      }
+    }
+
+    .disabled-btn {
+      background: #04364ac9;
+      cursor: not-allowed;
+
+      &:hover {
+        background-color: #555555a4;
+      }
+    }
+  }
+  .modal-container {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.603); // پس‌زمینه‌ی محو
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 20px 25px 30px;
+      width: 90%;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      position: relative;
+      animation: fadeIn 0.3s ease-in-out;
+      @include responsive($tablet) {
+        width: 60%;
+      }
+      h2 {
+        font-size: 25px;
+        margin-bottom: 30px;
+        color: #333;
+        text-align: center;
+      }
+      .SelectRegionModalContent {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        p {
+          font-size: 16px;
+          display: flex;
+          align-items: start;
+          gap: 3px;
+          color: #666;
+          line-height: 1.6;
+        }
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        color: #333;
+
+        &:hover {
+          color: red;
+        }
+      }
+    }
+  }
+
+  // انیمیشن ورود
+  @keyframes fadeIn {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}

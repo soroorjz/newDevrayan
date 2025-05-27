@@ -1,0 +1,128 @@
+@import "../../../styles/responsive.scss";
+$tablet-resize: 900px;
+$primary-color: #e55604;
+$secondary-color: #04364a;
+$gray-color: #cdd0d1;
+$text-color: #000;
+
+.contact-us {
+  width: 100%;
+  @include responsive($tablet) {
+    width:100%;
+  }
+  @include responsive($tablet-resize) {
+    width: 50%;
+  }
+  .contact-us-top {
+    width: 100%;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include responsive($tablet) {
+      flex-direction: row;
+      margin-bottom: 20px;
+      align-items: unset;
+    }
+    @include responsive($tablet-resize) {
+      width: 100%;
+    }
+    .form-section {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-top: 20px;
+      border-top: 2px solid #04364a;
+      @include responsive($tablet-resize) {
+        width: 60%;
+      }
+      @include responsive($tablet) {
+        width: 50%;
+        border: none;
+        padding-top: 0;
+      }
+      .contactUsFormTop {
+        display: flex;
+        gap: 10px;
+      }
+      .input {
+        padding: 0.4rem;
+        border: 1px solid $gray-color;
+        border-radius: 10px;
+        font-size: 0.8rem;
+        &.email,
+        &.phone,
+        &.name {
+          width: 100%;
+        }
+        &.message {
+          height: 100px;
+          resize: none;
+        }
+      }
+
+      .submit-btn {
+        width: 20%;
+        padding: 0.5rem;
+        background-color: $primary-color;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        font-size: 0.8rem;
+        cursor: pointer;
+        align-self: flex-end;
+        &:hover {
+          background-color: darken($primary-color, 10%);
+        }
+      }
+    }
+    .info-section {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      gap: 0.8rem;
+      @include responsive($tablet-resize) {
+        width: 100%;
+      }
+      @include responsive($tablet) {
+        width: 50%;
+      }
+
+      .info-card {
+        padding: 6px;
+        display: flex;
+
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #fff;
+        border: 1px solid $gray-color;
+        border-radius: 10px;
+        @include responsive($tablet) {
+          padding: 14px;
+        }
+        .infoCardTitle {
+          display: flex;
+          align-items: flex-end;
+          gap: 10px;
+          .icon {
+            font-size: 0.9rem;
+            margin-left: 3px;
+            color: $primary-color;
+          }
+
+          .text {
+            font-size: 0.9rem;
+            font-weight: bold;
+          }
+        }
+
+        .desc {
+          font-size: 12px;
+          color: $text-color;
+        }
+      }
+    }
+  }
+}

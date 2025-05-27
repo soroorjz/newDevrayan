@@ -1,0 +1,130 @@
+@import "../../styles/responsive.scss";
+
+$tablet-resize: 900px;
+$primary-color: #e55604;
+
+.registration-stepper-container {
+  width: 95%;
+  margin: 80px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  // padding: 20px;
+  @include responsive($tablet) {
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  @include responsive($tablet-resize) {
+    height: 100vh;
+    margin: 20px auto 0;
+  }
+  .registration-stepper {
+    display: flex;
+    height: 100%;
+    margin-top: 20px;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    align-items: flex-start;
+    @include responsive($tablet) {
+      flex-direction: column;
+      width: 15%;
+    }
+    @include responsive($tablet-resize) {
+      align-items: flex-start;
+    }
+    .registration-step {
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      height: 16%;
+      @include responsive($tablet-resize) {
+        flex-direction: row;
+        height: 15%;
+      }
+
+      &.active {
+        .registration-step-number {
+          background-color: $primary-color;
+          color: #fff;
+        }
+        .registration-step-label {
+          font-weight: bold;
+          color: $primary-color;
+          text-align: center;
+          @include responsive($tablet-resize) {
+            text-align: unset;
+          }
+        }
+      }
+
+      .registration-step-number {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #ddd;
+        border-radius: 50%;
+        font-size: 16px;
+        font-weight: bold;
+        color: #aaa;
+        background-color: #f9f9f9;
+      }
+
+      .registration-step-label {
+        font-size: 14px;
+        color: #aaa;
+        text-align: center;
+        @include responsive($tablet-resize) {
+          text-align: unset;
+        }
+      }
+    }
+  }
+
+  .registration-step-content {
+    flex: 3;
+    border-radius: 8px;
+    padding: 20px 5px;
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    @include responsive($tablet) {
+      margin-top: 80px;
+      height: 90vh;
+      padding: 20px;
+    }
+  }
+
+  .registration-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .registration-modal-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,111 @@
+@import "../../../styles/responsive.scss";
+$tablet-resize: 900px;
+
+.ProfileHeader {
+  width: 85%;
+  background-color: #fff;
+  // border-radius: 50px 50px 0 0;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  @include responsive($tablet-resize) {
+    width: 90%;
+  }
+  .ProfileHeader-Wrapper {
+    width: 95%;
+    margin: 0 auto;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .ProfileHeader-rightPart {
+      height: 100%;
+      img {
+        margin-top: 5px;
+        width: 70px;
+      }
+    }
+
+    .leftPart {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+
+      .user-btn {
+        background: none;
+        border: none;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+      }
+
+      .dropdown-icon {
+        transition: transform 0.3s ease;
+      }
+
+      .dropdown-icon.open {
+        transform: rotate(180deg);
+      }
+
+      .profileImg {
+        img {
+          font-size: 54px;
+          border-radius: 50%;
+          // width: 50px;
+          width: 100%;
+          height: 50px;
+        }
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+        padding: 8px;
+        width: 130px;
+        display: flex;
+        flex-direction: column;
+        z-index: 100;
+      }
+
+      .logout-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        justify-content: space-between;
+        padding: 8px 0;
+        border-bottom: 1px solid;
+        &:nth-last-child(1) {
+          border-bottom: none;
+        }
+        a {
+          color: #000 ;
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          &:hover {
+            color: #e55604;
+          }
+        }
+        svg {
+          font-size: 20px;
+        }
+        &:hover {
+          color: #e55604;
+        }
+      }
+    }
+  }
+}

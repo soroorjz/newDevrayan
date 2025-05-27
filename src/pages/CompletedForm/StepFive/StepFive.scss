@@ -1,0 +1,111 @@
+.step5-container {
+  width: 100%;
+  max-width: 1200px; // افزایش عرض برای 4 ستون
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+
+  .formFive {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; // 4 ستون
+    gap: 20px;
+
+    .step5-form-group {
+      margin-bottom: 15px;
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 14px;
+        color: #333;
+      }
+      .rmdp-input {
+        height: unset;
+      }
+      input[type="text"],
+      select,
+      .rmdp-input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background: #f9f9f9;
+        font-size: 14px;
+        outline: none;
+        transition: border-color 0.3s;
+
+        &:not([readonly]) {
+          background-color: #fff;
+          cursor: text;
+          border-color: #04364a;
+        }
+
+        &:focus {
+          border-color: #04364a;
+        }
+      }
+    }
+
+    .step5-form-actions {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-top: 20px;
+
+      .step5-prev-button {
+        background-color: #04364a;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+
+        &:hover {
+          background-color: #032532;
+        }
+      }
+
+      .step5-submit-button {
+        background-color: #032532;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+
+        &:hover {
+          background-color: #04364a;
+        }
+      }
+
+      .step5-edit-button {
+        background-color: #f39c12;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+
+        &:hover {
+          background-color: #e67e22;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .formFive {
+      grid-template-columns: 1fr;
+
+      .step5-form-actions {
+        grid-column: 1 / 2;
+      }
+    }
+  }
+}

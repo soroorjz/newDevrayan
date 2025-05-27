@@ -1,0 +1,129 @@
+@import "../../styles/responsive.scss";
+$tablet-resize: 900px;
+.chat-box {
+  position: fixed;
+  right: 80px;
+  bottom: 85px;
+  width: 310px;
+  background: #04364a;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  color: white;
+  height: 300px;
+  z-index: 999;
+  @include responsive($tablet-resize) {
+    bottom: 20px;
+    width: 400px;
+    height: 400px;
+  }
+
+  .chat-header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background: #043244;
+    border-radius: 10px;
+    color: #ffffff;
+    padding: 15px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .close-chat {
+      color: #ffffff;
+      position: absolute;
+      background: 0;
+      border: 0;
+      cursor: pointer;
+      left: 20px;
+      &:hover {
+        color: #e55604;
+      }
+    }
+  }
+
+  .chat-body {
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+    overflow-y: auto;
+    max-height: 300px;
+    margin-bottom: 10px;
+  }
+  .offlineText {
+    color: #828181;
+  }
+
+  .chat-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .support-msg {
+      background: #374151;
+      color: #ffffff;
+      padding: 10px 15px;
+      border-radius: 15px;
+      align-self: flex-end; // پیام‌های پشتیبانی سمت چپ
+      max-width: 70%;
+    }
+  }
+
+  .user-msg {
+    background: #1da1f2;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 15px;
+    align-self: flex-start; // پیام‌های کاربر سمت راست
+    max-width: 70%;
+  }
+
+  .chat-footer {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #192734;
+    border-top: 1px solid #374151;
+
+    input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 0 10px 10px 0;
+      background: #253341;
+      color: white;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .chat-submit {
+      background: #578e7e;
+      color: white;
+      border: none;
+      border-radius: 10px 0 0 10px;
+      font-size: 20px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 10px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      &:hover {
+        background: #e55604;
+      }
+    }
+  }
+}
+.Temporary {
+  width: fit-content;
+  background: 0;
+  border: 0;
+  position: absolute;
+}

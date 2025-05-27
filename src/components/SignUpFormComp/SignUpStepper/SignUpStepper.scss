@@ -1,0 +1,99 @@
+@import "../../../styles/responsive.scss";
+$tablet-resize: 900px;
+$primary-color: #e55604;
+.stepper-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 96%;
+  margin: 0 auto;
+  @include responsive($tablet) {
+  }
+
+  .modal-overlay {
+    .modal-content {
+      height: 100%;
+      overflow: auto;
+      &::-webkit-scrollbar {
+        display: none; /* کروم، سافاری و اپرا */
+      }
+    }
+  }
+}
+
+.stepper {
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin: 50px 0;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 5px;
+
+  &.active {
+    .step-number {
+      background-color: $primary-color;
+      color: #fff;
+    }
+
+    .step-label {
+      font-weight: bold;
+      color: $primary-color;
+    }
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: bold;
+    color: #aaa;
+    background-color: #f9f9f9;
+  }
+
+  .step-label {
+    font-size: 14px;
+    color: #aaa;
+  }
+}
+.fileInputPart {
+  display: flex;
+  justify-content: center;
+}
+.step-content {
+  border-radius: 8px;
+  width: 96%;
+  margin: 0 auto;
+  @include responsive($tablet) {
+  }
+}
+
+.modal-overlay {
+  p {
+    background-color: #fff;
+    position: absolute;
+    width: 400px;
+    min-height: 250px;
+    top: calc(50% - 200px);
+    right: calc(50% - 180px);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+  }
+}

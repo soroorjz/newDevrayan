@@ -1,0 +1,67 @@
+@import "../../../styles/responsive.scss";
+$tablet-resize: 900px;
+.countdown {
+  text-align: center;
+  margin: 120px auto 0;
+  width: 90%;
+  color: #04364a;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  padding: 30px 40px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 9;
+
+  @include responsive($mobile) {
+    width: 70%;
+  }
+  @include responsive($tablet-resize) {
+    position: fixed;
+    left: 20px;
+    top: 100px;
+    margin: 0;
+    width: unset;
+  }
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+  }
+
+  .countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    .countdown-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #ecf0f1;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+      .countdown-value {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #04364a;
+      }
+
+      .countdown-label {
+        font-size: 0.9rem;
+        color: #7f8c8d;
+      }
+    }
+  }
+
+  .examSignUpbtn {
+    background-color: #e55604;
+    border: 0;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+  }
+}

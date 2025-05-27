@@ -1,0 +1,37 @@
+@import "../../styles/responsive.scss";
+$tablet-resize: 900px;
+.profile-page {
+  // width: 100%;
+  display: flex;
+  // align-items: center;
+  // flex-direction: column;
+  position: relative;
+  background-color: #04364a;
+  @include responsive($tablet-resize) {
+    height: 100vh;
+  }
+
+  .rightPart {
+    position: relative;
+    z-index: 90;
+    width: 100%;
+    margin-top: 50px;
+    justify-content: flex-start;
+    // margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #fff;
+    // border-radius: 50px 0;
+    width: 85%;
+    max-height: 100vh;
+    overflow: auto;
+    @include responsive($tablet-resize) {
+      // border-radius: 50px 0 0 50px;
+    max-height:unset;
+    overflow:unset;
+    width: 90%;
+
+    }
+  }
+}

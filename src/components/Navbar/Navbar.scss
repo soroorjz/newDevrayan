@@ -1,0 +1,118 @@
+@import "../../styles/responsive.scss";
+$tablet-resize: 900px;
+.navbar-container {
+  .sidebarNav {
+    position: fixed;
+    z-index: 99999999;
+    top: calc(50% - 150px);
+    left: 0;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    display: none;
+
+    @include responsive($tablet) {
+      display: block;
+    }
+
+    .menu-item {
+      background-color: #04364a;
+      width: fit-content;
+      border-radius: 10px;
+      margin: 5px 0;
+      display: flex;
+      align-items: center;
+      position: relative;
+      gap: 10px;
+      padding: 15px;
+      cursor: pointer;
+      transition: background-color 0.1ms ease;
+
+      &:hover {
+        background-color: #578e7e;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      svg {
+        font-size: 20px;
+        color: #dafffb;
+      }
+
+      .menu-text {
+        font-size: 14px;
+        color: #ffffff;
+        background-color: #578e7e;
+        padding: 5px 10px;
+        white-space: nowrap;
+        position: absolute;
+        left: 50px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-10px);
+        transition: all 0.3s ease;
+        font-size: 18px;
+        height: 48px;
+        line-height: 42px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        // &:hover {
+        //   background-color: #e55604;
+        // }
+      }
+
+      &:hover .menu-text {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+      }
+    }
+    .active {
+      background-color: #578e7e;
+    }
+  }
+
+  .bottomNav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #04364a;
+    z-index: 99999999;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    @include responsive($tablet) {
+      display: none;
+    }
+
+    .menu-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      // justify-content: center;
+      // justify-content: space-between;
+      color: #dafffb;
+      // width: 14%;
+      // height: fit-content;
+      text-align: center;
+      width: 55px;
+      height: 55px;
+      padding: 3px;
+      svg {
+        font-size: 16px;
+      }
+
+      .menu-text {
+        font-size: 12px;
+        color: #fff;
+      }
+     
+    }
+    .active {
+      color: #e55604b1;
+      // border: 2px solid  #e55604;
+    }
+  }
+}

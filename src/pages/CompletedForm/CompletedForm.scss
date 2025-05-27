@@ -1,0 +1,76 @@
+@import "../../styles/responsive.scss";
+
+.completed-form-container {
+  width: 100%;
+  margin: 50px auto;
+  padding: 20px;
+ 
+  @include responsive($tablet) {
+    width: 90%;
+  }
+}
+
+.completed-stepper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 20%;
+}
+
+.step-number {
+  width: 30px;
+  height: 30px;
+  background-color: #04364a;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.step-label {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+.step.completed .step-number {
+  background-color: #e55604; // رنگ سبز برای مراحل تکمیل‌شده
+}
+
+.Complete-step-content {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+  @include responsive($tablet) {
+    padding: 20px;
+
+    margin-bottom: unset;
+  }
+}
+
+.placeholder-content {
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+.confirmation-message {
+  margin-top: 20px;
+  text-align: center;
+  color: #28a745;
+  font-weight: bold;
+}

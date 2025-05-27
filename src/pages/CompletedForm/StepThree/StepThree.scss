@@ -1,0 +1,116 @@
+@import "../../../styles/responsive.scss";
+.step3-container {
+  width: 100%;
+
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+
+  .formThree {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    @include responsive-reverse($tablet) {
+      grid-template-columns: 1fr;
+    }
+
+    .step3-form-group {
+      margin-bottom: 15px;
+      @include responsive-reverse($tablet) {
+        width: 80%;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 14px;
+        color: #333;
+      }
+
+      input[type="text"],
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        box-sizing: border-box;
+        background-color: #f5f5f5;
+        color: #555;
+        cursor: not-allowed;
+
+        &:not([readonly]) {
+          background-color: #fff;
+          cursor: text;
+          border-color: #04364a;
+        }
+      }
+    }
+
+    .step3-form-actions {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-top: 20px;
+      @include responsive-reverse($tablet) {
+        grid-column: 1 / 2;
+        width: 100%;
+        gap: 5px;
+      }
+
+      .step3-prev-button {
+        background-color: #04364a;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        @include responsive-reverse($tablet) {
+          width: 33.3%;
+          padding: 10px 5px;
+        }
+
+        &:hover {
+          background-color: #03283a;
+        }
+      }
+
+      .step3-next-button {
+        background-color: #04364a;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        @include responsive-reverse($tablet) {
+          width: 33.3%;
+          padding: 10px 5px;
+        }
+        &:hover {
+          background-color: #03283a;
+        }
+      }
+
+      .step3-edit-button {
+        background-color: #f39c12;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        @include responsive-reverse($tablet) {
+          width: 33.3%;
+          padding: 10px 5px;
+        }
+        &:hover {
+          background-color: #e67e22;
+        }
+      }
+    }
+  }
+}

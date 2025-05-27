@@ -1,0 +1,105 @@
+@import "../../../styles/responsive.scss";
+$tablet-resize: 900px;
+
+.profileSide-Container {
+  background-color: #04364a;
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 10%;
+  transition: transform 0.3s ease-in-out;
+  .close-btn {
+    background: 0;
+    border: 0;
+    .sideBar-Close {
+      position: absolute;
+      right: 10px;
+      font-size: 22px;
+      color: #fff;
+      background-color: 0;
+    }
+    @include responsive($tablet-resize) {
+      display: none;
+    }
+  }
+  .acountBtns {
+    height: 100%;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    .docNotifNum {
+      position: absolute;
+      color: #fff;
+      background-color: red;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      top: 60.5%;
+      left: 34%;
+    }
+    button {
+      cursor: pointer;
+      color: #dafffb;
+      font-size: 0.813rem;
+      height: 13%;
+      padding: 10px 5px;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: 0;
+      border: 0;
+
+      &:hover {
+        color: #e55604;
+      }
+
+      svg {
+        font-size: 1.5rem;
+      }
+    }
+
+    .active {
+      background-color: #fff;
+      color: #e55604;
+      font-weight: bold;
+      z-index: 2;
+    }
+  }
+  @include responsive($tablet-resize) {
+    height: 100vh;
+  }
+}
+
+@media (max-width: 900px) {
+  .profileSide-Container {
+    width: 250px;
+    transform: translateX(-100%);
+    position: fixed;
+    z-index: 1000;
+
+    &.open {
+      transform: translateX(0);
+    }
+  }
+
+  .menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    background: 0;
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+}

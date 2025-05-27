@@ -1,0 +1,35 @@
+@import "../../styles/responsive.scss";
+$tablet-resize: 900px;
+.homeContainer {
+  width: 100%;
+  position: relative;
+  #ExamCardPart {
+    display: flex;
+    justify-content: flex-end;
+    @include responsive($tablet-resize) {
+      height: 70vh;
+    }
+  }
+  #NewsComp {
+    margin-top: 40px;
+  }
+  .tutorialBtn {
+    background: 0;
+    border: 0;
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    font-size: 25px;
+    z-index: 9999;
+    color: #ccc;
+    cursor: pointer;
+  }
+
+
+}
+  .homeTooltip-IntroJs{
+    .top{
+      right: 143px !important;
+    }
+
+  }

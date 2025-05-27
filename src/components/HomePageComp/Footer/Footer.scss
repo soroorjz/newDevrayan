@@ -1,0 +1,99 @@
+@import "../../../styles/responsive.scss";
+$tablet-resize: 900px;
+$primary-color: #e55604;
+$secondary-color: #04364a;
+$gray-color: #cdd0d1;
+$text-color: #000;
+.footerPart-Container {
+  width: 100%;
+  padding: 20px;
+  -webkit-box-shadow: 0px -5px 34px -21px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px -5px 34px -21px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px -5px 34px -21px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  .footerTitle {
+    h2 {
+      text-align: center;
+    }
+  }
+  .footerTopPart {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    border-bottom: 1px solid $gray-color;
+    padding-bottom: 20px;
+    @include responsive($tablet-resize) {
+      flex-direction: row;
+    }
+    .footer-TrustSymbolPart {
+      width: unset;
+      margin-top: 20px;
+      @include responsive($tablet) {
+        width: 10%;
+        align-self: self-start;
+      }
+      @include responsive($tablet-resize) {
+        align-self: flex-end;
+      }
+      img {
+        @include responsive($tablet-resize) {
+          width: 100%;
+        }
+      }
+    }
+    .newsletter-section {
+      width: 100%;
+      margin-top: 20px;
+      background-color: $secondary-color;
+      color: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      @include responsive($tablet-resize) {
+        width: 25%;
+        margin: 0;
+      }
+
+      h3 {
+        font-size: 18px;
+        margin-bottom: 0.3rem;
+      }
+
+      p {
+        font-size: 14px;
+        margin-bottom: 1rem;
+      }
+
+      .input {
+        margin-bottom: 1rem;
+        width: 60%;
+        padding: 5px 10px;
+        border: 0;
+        border-radius: 5px;
+      }
+
+      .submit-btn {
+        width: fit-content;
+        padding: 5px 10px;
+        border: 0;
+        border-radius: 5px;
+        background-color: $primary-color;
+        color: #fff;
+        border: none;
+        font-size: 15px;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+  }
+  .footerBottom {
+    .footer-CoyRightPart {
+      p {
+        font-size: 12px;
+        text-align: center;
+      }
+    }
+  }
+}

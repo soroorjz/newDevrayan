@@ -1,0 +1,432 @@
+$primary-color: #e55604;
+@import "../../../styles/responsive.scss";
+$tablet-resize: 900px;
+
+a {
+  text-decoration: none;
+  color: #dafffb;
+}
+
+.error {
+  color: #e50404;
+  margin-top: 3px;
+  font-size: 12px;
+}
+
+.navBarTopPart {
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  width: 100%;
+  display: flex;
+  padding: 25px 15px;
+  z-index: 999;
+
+  .navbarLeftPart {
+    display: none;
+    width: 75%;
+    gap: 10px;
+    justify-content: end;
+    align-items: center;
+
+    @include responsive($tablet) {
+      display: flex;
+    }
+
+    .jobSearchBtn {
+      width: fit-content;
+      display: flex;
+      justify-content: flex-end;
+      button {
+        a {
+          text-decoration: none;
+          color: #dafffb;
+        }
+      }
+    }
+
+    .logInPart {
+      width: fit-content;
+      display: none;
+      button {
+      }
+      @include responsive($tablet) {
+        display: flex;
+        justify-content: flex-end;
+      }
+      a {
+        text-decoration: none !important;
+        color: #dafffb;
+      }
+    }
+
+    button {
+      background: 0;
+      background-color: #04364a;
+      border: 0;
+      color: #dafffb;
+      padding: 10px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+      transition: background-color 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $primary-color;
+      }
+
+      @include responsive($tablet-resize) {
+        width: fit-content;
+      }
+    }
+    .navTotarialBtn {
+    }
+  }
+
+  .logoPart {
+    height: 50px;
+    width: 25%;
+    align-items: center;
+    gap: 7px;
+    display: none;
+
+    @include responsive($tablet) {
+      display: flex;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      text-decoration: none;
+
+      img {
+        width: 60px;
+        @include responsive($tablet-resize) {
+          width: 80px;
+        }
+      }
+
+      p {
+        font-size: 14px;
+        color: #3d3d3d;
+      }
+    }
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 35px;
+    @include responsive($tablet) {
+      display: none;
+    }
+  }
+
+  .responsiveLogo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 20%;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    img {
+      height: 60px;
+      width: 60px;
+    }
+    p {
+      font-size: 10px;
+      text-align: center;
+      line-height: 13px;
+      color: #5d5a5a;
+    }
+    @include responsive($tablet) {
+      display: none;
+    }
+  }
+}
+
+.scrolledNav {
+  background-color: #fff;
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 99998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+
+  &.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  right: -100%;
+  width: 250px;
+  height: 100%;
+  background-color: #04364a;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: right 0.3s ease-in-out;
+
+  &.open {
+    right: 0;
+  }
+
+  .close-sidebar {
+    position: absolute;
+    align-self: flex-end;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .sidebar-content {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .sidebar-login-button,
+    .jobSearchBtn {
+      width: 100%;
+      justify-content: center;
+      display: flex;
+      background: 0;
+      background-color: #dafffb;
+      border: 0;
+      color: #04364a;
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-size: 14px;
+      transition: background-color 0.3s;
+      cursor: pointer;
+      &:hover {
+        background-color: #e55604;
+      }
+    }
+    .sidebar-login-button {
+      a {
+        color: #04364a !important;
+      }
+    }
+  }
+}
+
+.userProfile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 5;
+  width: 15%;
+  justify-content: center;
+.docNotifNum{
+ position: absolute;
+    color: #fff;
+    background-color: red;
+    border-radius: 50%;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    top: 10%;
+    left: 77%;
+}
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .user-details {
+    width: 100%;
+    text-wrap: nowrap;
+  }
+
+  .user-avatar {
+    width: 100%;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  .topNavDropdown-menu {
+    position: absolute;
+    top: 55px;
+    background-color: #04364a;
+    border-radius: 10px;
+    // box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    display: none;
+    flex-direction: column;
+    z-index: 10;
+    border: none;
+    background: transparent;
+  }
+
+  &:hover .topNavDropdown-menu {
+    display: flex;
+  }
+
+  .goToProfileBtn {
+    flex-direction: row-reverse;
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    justify-content: space-between;
+    gap: 5px;
+    font-size: 14px;
+    padding: 15px !important;
+    text-align: center;
+    width: 100% !important;
+    cursor: pointer;
+    color: #f1f1f1;
+    border-radius: 10px 10px 0 0 !important;
+
+    transition: background 0.3s;
+    overflow: hidden;
+    background-color: #04364a;
+    &:hover {
+      background: #f1f1f1;
+      color: #04364a;
+    }
+    .docNotifNum{
+      // left: 35%;
+      right: 0;
+    }
+  }
+  .exit {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    align-self: flex-start;
+    justify-content: space-between;
+    gap: 5px;
+    font-size: 14px;
+    padding: 15px !important;
+    text-align: center;
+    width: 100% !important;
+    cursor: pointer;
+    color: #f1f1f1;
+    border-radius: 0 0 10px 10px !important;
+    transition: background 0.3s;
+    overflow: hidden;
+    background-color: #04364a;
+    &:hover {
+      background: #f1f1f1;
+      color: #04364a;
+    }
+  }
+}
+
+.responsive-userProfile {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 5;
+  margin-bottom: 10px;
+  .responsive-user-info {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .responsive-user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+  }
+  .responsive-user-name {
+    cursor: default;
+  }
+  .responsive-dropdown-menu {
+    display: flex;
+    width: 100% !important;
+    align-items: center;
+    gap: 5px;
+    color: #04364a;
+    width: fit-content;
+    flex-direction: column;
+    z-index: 10;
+    overflow: hidden;
+    button {
+      border: 0;
+      background: 0;
+      &:hover {
+        background-color: #e55604;
+      }
+    }
+    a,
+    button {
+      border-radius: 10px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #04364a;
+      background-color: #dafffb;
+      font-size: 14px;
+      padding: 12px 15px;
+      text-align: center;
+      width: 100% !important;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    a:hover {
+      background: #f1f1f1;
+    }
+  }
+}
+
+.sideBar-JobSearchBtn {
+  button {
+    border-radius: 10px;
+    width: 100%;
+    border: 0;
+    display: flex;
+    color: #04364a;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: #dafffb;
+    font-size: 14px;
+    padding: 12px 15px;
+    text-align: center;
+    width: 100% !important;
+    cursor: pointer;
+    transition: background 0.3s;
+    &:hover {
+      background-color: #e55604;
+    }
+    a {
+      color: #04364a !important;
+      text-align: center !important;
+    }
+  }
+}

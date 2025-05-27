@@ -1,0 +1,94 @@
+@import "../../../../styles/responsive.scss";
+$tablet-resize: 900px;
+.exams-announces {
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 8px;
+  background-color: #fff;
+  text-align: right;
+  padding-bottom: 57px;
+  @include responsive($tablet) {
+    width: 90%;
+    padding: 20px 50px;
+  margin: 20px auto;
+
+  }
+  .announce-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .announce-header {
+    margin-bottom: 10px;
+
+    .announce-date {
+      font-size: 16px;
+      color: #666;
+      font-style: italic;
+    }
+  }
+
+  .announce-content {
+    margin-bottom: 20px;
+
+    .announce-text {
+      font-size: 16px;
+      color: #444;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    .announce-list {
+      padding-right: 20px;
+
+      .announce-item {
+        font-size: 15px;
+        color: #555;
+        margin-bottom: 5px;
+        list-style-type: disc;
+        display: flex;
+        gap: 10px;
+       
+      }
+    }
+  }
+
+  .announce-footer {
+    border-top: 1px dashed #ccc;
+    padding-top: 10px;
+
+    .announce-signature {
+      font-size: 14px;
+      color: #777;
+      text-align: center;
+    }
+  }
+}
+
+.announce-item {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  @include responsive($tablet) {
+    flex-direction: row;
+  }
+}
+.announce-date {
+  color: #555555a1;
+}
+
+.announce-list {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 0 !important;
+}
+.highlight {
+  color: #e55604;
+  transition: all 0.5s ease;
+  &:hover {
+    color: #04364a;
+  }
+}

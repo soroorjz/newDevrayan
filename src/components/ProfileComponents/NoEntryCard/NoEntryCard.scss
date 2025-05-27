@@ -1,0 +1,16 @@
+@import "../../../styles/responsive.scss";
+$tablet-resize: 900px;
+
+.NoEntryCard {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  border: 2px solid #e55604ac;
+  padding: 50px 0;
+  background-color: #cccccc6c;
+  border-radius: 10px;
+  @include responsive($tablet-resize) {
+    width: 60%;
+    padding: 50px 80px;
+  }
+}

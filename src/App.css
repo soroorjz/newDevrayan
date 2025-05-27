@@ -1,0 +1,164 @@
+@font-face {
+  font-family: "Vazirmatn";
+  src:
+   /* url("/public/assets/fonts/Vazirmatn-Black.woff2") format("woff2"), */ url("/public/assets/fonts/font2/Vazirmatn-Black.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src:
+   /* url("/public/assets/fonts/Vazirmatn-Bold.woff2") format("woff2"), */ url("/public/assets/fonts/font2/Vazirmatn-Bold.ttf")
+    format("truetype");
+  font-weight: bold;
+  font-style: bold;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src:
+   /* url("/public/assets/fonts/Vazirmatn-Thin.woff2") format("woff2"), */ url("/public/assets/fonts/font2/Vazirmatn-Thin.ttf")
+    format("truetype");
+  font-weight: thin;
+  font-style: thin;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src:
+   /* url("/public/assets/fonts/Vazirmatn-Light.woff2") format("woff2"), */ url("/public/assets/fonts/font2/Vazirmatn-Light.ttf")
+    format("truetype");
+  font-weight: Light;
+  font-style: Light;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src: 
+  /* url("/public/assets/fonts/Vazirmatn-Medium.woff2") format("woff2"), */ url("/public/assets/fonts/font2/Vazirmatn-FD-Medium.ttf")
+    format("truetype");
+  font-weight: Medium;
+  font-style: Medium;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Vazirmatn;
+  a {
+    text-decoration: none !important;
+  }
+}
+
+.homeTooltip-IntroJs {
+  background-color: transparent !important;
+  color: #fff !important;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 900;
+  padding: 0 !important;
+  box-shadow: none !important;
+  display: flex !important;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+.introjs-tooltiptext {
+  font-family: Vazirmatn !important;
+  padding: 0 !important;
+  text-shadow: none !important;
+  max-width: 150px;
+  text-align: center !important;
+}
+.introjs-tooltipbuttons {
+  border: 0 !important;
+  padding: 0 !important;
+  border-radius: 10px !important;
+}
+.introjs-button {
+  font-family: Vazirmatn !important;
+  border-radius: 10px !important;
+  text-shadow: none !important;
+
+  padding: 10px !important;
+}
+
+.introjs-arrow {
+  content: "";
+  position: absolute;
+  top: -5px;
+  transform: rotate(180deg);
+  width: 40px !important;
+  height: 40px !important;
+  border: 0 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 511.61'%3E%3Cpath fill='%23e55604' d='m281.46 249.66-15.5-101.27c-.57-3.8.47-7.81 3.19-10.93 4.92-5.64 13.5-6.24 19.14-1.32l207.07 180.38 1.53 1.59c4.77 5.76 3.96 14.32-1.8 19.08L288.02 508.53c-2.99 2.41-6.96 3.59-11.03 2.87-7.34-1.32-12.23-8.36-10.91-15.69l15.44-85.83c-17.98-2.09-37.59-6.57-57.77-13.36-52.66-17.69-109.96-51.41-153.32-100.33C26.64 246.79-3.02 181.98.25 102.58 1.42 73.66 7 42.84 17.88 10.23 19.22 4.95 23.7.78 29.43.1c7.44-.88 14.19 4.44 15.06 11.87 11.93 100.08 50.53 158.11 98.25 191.8 42.65 30.12 93.19 41.35 138.72 45.89z'/%3E%3C/svg%3E") !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bottom {
+  transform: rotate(90deg) !important;
+}
+.introjs-tooltip-title {
+  display: none;
+}
+.introjs-nextbutton {
+  margin: 0 !important;
+  border: 0 !important;
+  text-shadow: none !important;
+  background-color: #616161 !important;
+  /* background-color: #04364a !important; */
+  font-size: 14px !important;
+  font-weight: 900;
+  /* color: #dafffb !important; */
+
+  border-radius: 0 !important;
+}
+.introjs-nextbutton:focus {
+  border-color: #e55604 !important ;
+  border: none !important ;
+  outline: none !important;
+  text-shadow: none !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+.introjs-nextbutton:hover {
+  color: #e55604;
+}
+.introjs-prevbutton {
+  display: none !important;
+}
+
+.introjs-skipbutton {
+  transition: all 0.3s ease-in-out !important;
+  font-weight: 400;
+}
+.introjs-skipbutton:hover {
+  color: #e55604 !important;
+}
+.homeHighlight-IntroJs {
+  box-shadow: rgb(33 33 33 / 3%) 0px 0px 1px 2px,
+    rgb(33 33 33 / 84%) 0px 0px 0px 5000px !important;
+  border-radius: 10px !important;
+}
+
+.introjs-arrow.right-bottom {
+  top: unset !important;
+  right: 17px !important;
+  left: 0;
+  bottom: 32px !important;
+  transform: rotate(0deg);
+}
+.introjs-arrow.top {
+  left: unset !important;
+  right: 70px;
+  top: -42px !important;
+}
+.top-middle {
+  transform: rotate(90deg) !important;
+}
+.homeBtn {
+  svg {
+    font-size: 35px;
+    color: #dafffb;
+  }
+}

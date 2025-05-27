@@ -1,0 +1,69 @@
+@import "../../../styles/responsive.scss";
+$tablet-resize: 900px;
+
+.registration-card {
+  width: 90%;
+  margin: 50px 30px 50px;
+  // height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // gap: 15px;
+  // align-items: center;
+  // padding: 0 40px;
+  // margin-top: 50px;
+  // border-radius: 10px;
+  // text-align: right;
+  @include responsive($tablet) {
+    margin: 100px auto 20px;
+  }
+  @include responsive($tablet-resize) {
+    margin-top: 100px;
+    width: 50%;
+    flex-direction: row;
+    margin: 100px 37px 20px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    width: 100%;
+    color: #2c3e50;
+    text-align: center;
+    margin: 20px 0;
+    @include responsive($tablet-resize) {
+      width: 50%;
+      margin: 0;
+    text-align: right;
+
+    }
+  }
+
+  .registration-card-list {
+    width: 100%;
+    display: flex;
+    // flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    @include responsive($tablet-resize) {
+      flex-direction: row;
+    }
+    li {
+      width: 47%;
+      // margin: 10px 0;
+      background-color: rgba(250, 235, 215, 0.525);
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 1rem;
+      @include responsive($tablet-resize) {
+        padding: 10px 15px;
+        width: fit-content;
+      }
+
+      strong {
+        color: #34495e;
+      }
+    }
+  }
+}

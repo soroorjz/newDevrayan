@@ -1,0 +1,168 @@
+@import "../../../../styles/responsive.scss";
+$tablet-resize: 900px;
+
+.support-help-center {
+  width: 100%;
+  border-radius: 10px;
+  padding: 30px 0;
+  margin: 0 auto;
+  @include responsive($tablet-resize) {
+    width: 70%;
+  padding: 30px 20px;
+
+  }
+  .categories,
+  .questions,
+  .answer,
+  .feedback-form {
+    margin-bottom: 20px;
+
+    h2 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+  }
+  .answer {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    @include responsive($tablet-resize){
+    width: 80%;
+
+    }
+    p {
+      margin-bottom: 30px;
+      color: #333;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    .feedback-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 0 auto;
+      width: 100%;
+      @include responsive($tablet-resize){
+      width: 60%;
+      gap: 20px;
+
+      }
+      button {
+        width: 50%;
+      }
+    }
+  }
+  .category-button,
+  .question-button,
+  .back-button,
+  .like-button,
+  .dislike-button,
+  .submit-button {
+    // display: block;
+    width: 90%;
+    padding: 10px;
+    margin: 5px 0;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+@include responsive($tablet-resize){
+  width: 80%;
+
+}
+    &.category-button,
+    &.question-button {
+      //   background-color: #04364a;
+      color: #04364a;
+      //   background: 0;
+      text-align: center;
+    }
+
+    &.back-button {
+      background-color: #6c757d;
+      color: #fff;
+
+      &:hover {
+        background-color: #5a6268;
+      }
+    }
+
+    &.like-button {
+      background-color: #578e7e;
+      color: #fff;
+
+      &:hover {
+        background-color: #218838;
+      }
+    }
+
+    &.dislike-button {
+      background-color: #ff5a5f;
+      color: #fff;
+
+      &:hover {
+        background-color: #c82333;
+      }
+    }
+
+    &.submit-button {
+      background-color: #17a2b8;
+      color: #fff;
+
+      &:hover {
+        background-color: #138496;
+      }
+    }
+  }
+
+  textarea {
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+
+    &:focus {
+      border-color: #80bdff;
+      outline: none;
+    }
+  }
+  .back-button {
+    width: 250px;
+    padding: 10px;
+    margin: 20px auto 0;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    border-radius: 10px;
+    background-color: #04364a !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .exam-selection {
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
+    h2 {
+      font-size: 20px;
+    }
+    select {
+      padding: 10px;
+      border: 1px solid #ced4da;
+      border-radius: 10px;
+    }
+
+    .exam-dropdown{
+      width: 75%;
+      margin: 0 auto;
+      @include responsive($tablet-resize){
+      width: 60%;
+
+      }
+    }
+  }
+}

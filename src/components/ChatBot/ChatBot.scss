@@ -1,0 +1,181 @@
+@import "../../styles/responsive.scss";
+$tablet-resize: 900px;
+
+.floating-menu {
+  position: fixed;
+  right: 20px;
+  bottom: 90px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 10px;
+  z-index: 50;
+  @include responsive($tablet){
+  bottom: 20px;
+
+  }
+}
+
+.chatBotMenu-toggle {
+  background-color: #04364a;
+  color: white;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+}
+
+.chatBotMenu-toggle.active {
+  background-color: #e55604;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-item-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.menu-item {
+  background-color: #578e7e;
+  color: white;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+
+  svg {
+    font-size: 22px;
+  }
+  
+}
+
+/* 🔹 استایل برای تولتیپ (توضیحات کنار آیکون) */
+.tooltip {
+  position: absolute;
+  right: 60px; /* فاصله از آیکون */
+  background-color: #f5a623;
+  z-index: 99;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent #f5a623; /* فلش کنار توضیح */
+  }
+}
+
+/* 🔹 نمایش تولتیپ هنگام هاور */
+.menu-item-container:hover .tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.message-form {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  position: fixed;
+  right: 80px;
+  bottom: 80px;
+  width: 300px;
+  direction: rtl;
+  z-index: 9999;
+  @include responsive($tablet-resize){
+  bottom: 20px;
+
+  }
+  
+  .form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    textarea {
+      height: 80px;
+      resize: none;
+    }
+    
+    .department {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      label {
+        font-size: 14px;
+      }
+    }
+
+    .submit-btn {
+      background: #f5a623;
+      color: white;
+      font-size: 16px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+}

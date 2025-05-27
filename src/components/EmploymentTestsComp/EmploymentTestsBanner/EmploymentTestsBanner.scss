@@ -1,0 +1,51 @@
+@import "../../../styles/responsive.scss";
+$tablet-resize: 900px;
+.EmploymentTestsBanner-Container {
+  margin: 100px auto 0;
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  //   padding: 70px 0;
+  //
+  .EmploymentTestsBanner-Img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      position: absolute;
+      right: 100px;
+      transform: rotate(45deg);
+      opacity: 0.5;
+      mask-image: linear-gradient(to left, transparent 1%, black 100%);
+      @include responsive($laptop){
+        right: unset;
+        left: 77px;
+      }
+    }
+  }
+  .EmploymentTestsBanner-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // background-color: #04364a48;
+    top: 0;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    .EmploymentTestsBanner-Title {
+      h1 {
+        font-size: 40px;
+        color: #04364a;
+        @include responsive($tablet){
+        font-size: 50px;
+
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,112 @@
+.user-info-form {
+  width: 80%;
+  margin: 0 auto ;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  .form-title {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #333;
+  }
+
+  .form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .form-field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    transition: background 0.3s;
+
+    &:hover {
+      background: #f1f1f1;
+    }
+
+    .field-label {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #555;
+    }
+
+    .display-mode {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .field-value {
+        font-size: 0.95rem;
+        color: #444;
+      }
+
+      .edit-btn {
+        background: none;
+        border: none;
+        color: #ff8800;
+        cursor: pointer;
+        font-size: 1.2rem;
+
+        &:hover {
+          color: #e67e22;
+        }
+      }
+    }
+
+    .edit-mode {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .edit-input {
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 6px;
+        font-size: 0.95rem;
+        width: 100%;
+        max-width: 200px;
+      }
+
+      .edit-actions {
+        display: flex;
+        gap: 8px;
+
+        .save-btn,
+        .cancel-btn {
+          border: none;
+          padding: 6px 12px;
+          border-radius: 6px;
+          cursor: pointer;
+          font-size: 0.9rem;
+        }
+
+        .save-btn {
+          background: #28a745;
+          color: #fff;
+
+          &:hover {
+            background: #218838;
+          }
+        }
+
+        .cancel-btn {
+          background: #dc3545;
+          color: #fff;
+
+          &:hover {
+            background: #c82333;
+          }
+        }
+      }
+    }
+  }
+}

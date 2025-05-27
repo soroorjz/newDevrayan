@@ -1,0 +1,77 @@
+.notification-list-container {
+  margin: 0 auto;
+
+  .notification-list-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: #fff;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: #f9f9f9;
+    }
+
+    &:nth-last-child(1) {
+      border: none;
+    }
+
+    &__icon {
+      display: flex;
+      align-items: center;
+      margin-left: 15px;
+
+      .notification-list-item__like-btn {
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .notification-list-item__count {
+        margin-right: 5px;
+        font-size: 14px;
+        color: #666;
+      }
+    }
+
+    &__content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      .notification-list-item__text {
+        font-size: 16px;
+        color: #333;
+      }
+
+      .notification-list-item__time {
+        font-size: 12px;
+        color: #888;
+        margin-top: 5px;
+      }
+    }
+
+    &__actions {
+      .notification-list-item__action-btn {
+        background-color: #e0e0e0;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 14px;
+        color: #333;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+          background-color: #d0d0d0;
+        }
+      }
+    }
+    &__download-label {
+      color: #888;
+      &:hover {
+        color: #e55604;
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+@import "../../styles/responsive.scss";
+$tablet-resize: 900px;
+
+.report-container {
+  width: 100%;
+  margin: 120px auto 0;
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include responsive($tablet) {
+    width: 90%;
+  }
+
+  .title {
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #dafffb;
+    background: #04364a;
+    padding: 25px;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .report-form {
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 50px;
+    padding: 20px;
+    border-radius:  0 0 10px 10px;
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+
+      .form-group {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      .violation {
+        width: 66%;
+      }
+      label {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        transition: border-color 0.2s;
+
+        &:focus {
+          border-color: #e55604;
+          outline: none;
+        }
+      }
+
+      textarea {
+        width: 66%;
+      }
+    }
+
+    button {
+      align-self: center;
+      width: 100%;
+      max-width: 300px;
+      padding: 10px;
+      color: #dafffb;
+      background: #04364a;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+
+      &:hover {
+        background: #e55604;
+        color: #fff;
+      }
+    }
+  }
+}
+.report-container {
+  .error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+}
+.modal {
+  display: flex; /* یا block */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(247, 4, 4);
+  padding: 20px;
+  z-index: 1000;
+}

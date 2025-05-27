@@ -1,0 +1,170 @@
+@import "../../../styles/responsive.scss";
+
+$tablet-resize: 900px;
+
+.timeline-container {
+  width: 100%;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  overflow: auto;
+  @include responsive($tablet) {
+    margin: 100px auto;
+  }
+  .timeline-item {
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    @include responsive($tablet) {
+      width: 80%;
+    }
+
+    .timelineTitlePart {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: flex-start;
+      flex-direction: row-reverse;
+      color: #04364a;
+      .icon-container {
+        font-size: 24px;
+      }
+
+      .section-title {
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+
+    .ConfirmInfoForm-container {
+      .section-form {
+        display: grid;
+        gap: 15px;
+        padding: 10px 0;
+        grid-template-columns: repeat(auto-fit, minmax(127px, 3fr));
+        @include responsive($tablet) {
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        .form-group {
+          display: flex;
+          flex-direction: column;
+          background: #f9f9f9;
+          padding: 10px;
+          border-radius: 5px;
+
+          .form-label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+          }
+
+          .form-value {
+            font-size: 14px;
+            color: #555;
+            padding-top: 5px;
+          }
+        }
+      }
+    }
+
+    &::before {
+      content: "";
+      width: 2px;
+      height: 20px;
+      background: #e55604;
+      justify-self: self-end;
+      position: absolute;
+      left: 21px;
+      bottom: -20px;
+    }
+  }
+  .last-item::before {
+    display: none;
+  }
+  .infoConfirmed {
+    width:95%;
+    display: flex;
+    gap: 5px;
+    @include responsive($tablet) {
+      width: 80%;
+    }
+  }
+  .edit-profile-link {
+    text-align: right;
+    align-self: flex-start;
+    width:95%;
+    margin: 0 auto;
+    @include responsive($tablet) {
+      width: 80%;
+
+    }
+  }
+  .ConfirmInfoBtns {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    @include responsive($tablet) {
+      justify-content: flex-end;
+      width: 77%;
+      gap: 15px;
+    }
+    button {
+      @include responsive($tablet) {
+        width: 20%;
+        margin: 20px 0;
+      }
+      display: block;
+      margin: 10px 0 70px;
+      padding: 12px;
+      background: #04364a;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: #e55604;
+      }
+      a {
+        color: #f0f0f0;
+      }
+    }
+    .disabled-button {
+      background: #04364ac9;
+      cursor: not-allowed;
+      &:hover {
+        background-color: #555555a4;
+      }
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px; // عرض اسکرول بار
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f0f0f0; // رنگ پس‌زمینه
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #04364a; // رنگ اسکرول
+    border-radius: 10px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #e55604; // رنگ هنگام هاور
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@import "../../styles/responsive.scss";
+.logInContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include responsive($tablet) {
+    height: 100vh;
+  }
+}

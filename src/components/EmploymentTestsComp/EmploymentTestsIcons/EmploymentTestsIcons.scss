@@ -1,0 +1,108 @@
+@import "../../../styles/responsive.scss";
+$tablet-resize: 900px;
+
+.EmploymentTestsIcons-Wrap {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.scroll-button {
+  background: 0;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+  padding: 10px;
+  color: #333;
+
+  &.left {
+    position: absolute;
+    left: 0;
+    bottom: -13px;
+  }
+
+  &.right {
+    position: absolute;
+    right: 0;
+    bottom: -13px;
+  }
+
+  &:hover {
+    color: #e55604;
+  }
+}
+
+.EmploymentTestsIcons-Container {
+  width: 92%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  gap: 3px;
+  padding: 10px;
+  .EmploymentTestsIcons-slider {
+    width: fit-content;
+  }
+  .swiper-button-prev {
+    &::after {
+      font-size: 20px;
+      color: #e55604;
+      font-weight: 900;
+      // margin-right: 30px;
+    }
+  }
+  .swiper-button-next{
+    &::after {
+      font-size: 20px;
+      color: #e55604;
+      font-weight: 900;
+      // margin-left: 30px;
+    }
+  }
+}
+
+.icon-button {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 10px;
+  color: #04364a;
+  @include responsive-reverse($tablet-resize) {
+    svg {
+      font-size: 20px;
+    }
+  }
+  &:hover {
+    color: #e55604;
+  }
+  &.selected {
+    color: #e55604;
+  }
+
+  .icon-text {
+    font-size: 16px;
+  }
+
+  @include responsive-reverse($tablet-resize) {
+    .icon-text {
+      max-width: 0;
+      // display: none;
+      transform: scale(0.8);
+      opacity: 0;
+      transition: all 0.8s ease;
+    }
+    &.selected .icon-text {
+      // display: inline;
+      max-width: 150px;
+      opacity: 1;
+      transform: scale(1);
+      font-size: 14px;
+    }
+  }
+}
