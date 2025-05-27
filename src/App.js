@@ -19,6 +19,7 @@ import ExamInfoSkeleton from "./pages/ExamInfo/ExamInfoSkeleton";
 import ExamCardSkeleton from "./pages/EmploymentTests/ExamCardSkeleton";
 import CardListSkeleton from "./components/HomePageComp/ExamCardPart/CardListSkeleton";
 import ErrorBoundary from "./components/ErrorBoundary";
+import Announcements from "./pages/Announcements/Announcements";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
             <Route path="/examInfo/:id" element={<ExamInfo />} />
             <Route path="/logIn" element={<LogIn />} />
             <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/Announcements" element={<Announcements />} />
             <Route path="/ReportForm" element={<ReportForm />} />
             <Route path="/EmploymentTests" element={<EmploymentTests />} />
             <Route path="/ReportTracking" element={<ReportTracking />} />

@@ -98,6 +98,10 @@ const NavbarTop = ({
               </div>
 
               <div className="topNavDropdown-menu">
+                <Link to="/Announcements" className="goToProfileBtn">
+                <span className="docNotifNum">1</span>
+                  <FaUser /> اعلانات
+                </Link>
                 <Link to="/profile" className="goToProfileBtn">
                 <span className="docNotifNum">1</span>
                   <FaUser /> حساب کاربری

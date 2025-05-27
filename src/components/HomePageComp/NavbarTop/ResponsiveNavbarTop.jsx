@@ -67,6 +67,9 @@ const ResponsiveNavbarTop = ({
               </div>
 
               <div className="responsive-dropdown-menu">
+                <Link to="/Announcements">
+                  <FaUser /> اعلانات
+                </Link>
                 <Link to="/profile">
                   <FaUser /> حساب کاربری
                 </Link>

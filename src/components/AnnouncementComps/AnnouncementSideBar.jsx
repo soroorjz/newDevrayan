@@ -4,10 +4,10 @@ import { FaBookReader, FaCheckCircle } from "react-icons/fa";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { IoClose, IoDocuments } from "react-icons/io5";
 import { FaUserPen, FaBars } from "react-icons/fa6";
-import "./ProfileSideBar.scss";
+import "./AnnouncementSideBar.scss";
 import { Link } from "react-router";
 
-const ProfileSideBar = ({ selectedComponent, setSelectedComponent }) => {
+const AnnouncementSideBar = ({ selectedComponent, setSelectedComponent }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 900);
   const sidebarRef = useRef(null);
@@ -63,81 +63,38 @@ const ProfileSideBar = ({ selectedComponent, setSelectedComponent }) => {
         <div className="acountBtns">
           <button
             onClick={() => {
-              setSelectedComponent("personal");
+              setSelectedComponent("job");
               setIsSidebarOpen(false);
             }}
-            className={selectedComponent === "personal" ? "active" : ""}
+            className={selectedComponent === "job" ? "active" : ""}
           >
             <FaUserPen />
-            مشخصات شخصی
+            سنجش تناسب شغل با شخصیت
           </button>
           <button
             onClick={() => {
-              setSelectedComponent("password");
+              setSelectedComponent("General");
               setIsSidebarOpen(false);
             }}
-            className={selectedComponent === "password" ? "active" : ""}
+            className={selectedComponent === "General" ? "active" : ""}
           >
             <RiLockPasswordLine />
-            تغییر رمز عبور
+            سنجش شایستگی‌های عمومی
           </button>
-          {/* <button
+          <button
             onClick={() => {
-              setSelectedComponent("exams");
+              setSelectedComponent("Specialized");
               setIsSidebarOpen(false);
             }}
-            className={selectedComponent === "exams" ? "active" : ""}
+            className={selectedComponent === "Specialized" ? "active" : ""}
           >
             <FaBookReader />
-            آزمون‌های من
-          </button> */}
-          {/* <button
-            onClick={() => {
-              setSelectedComponent("suggested");
-              setIsSidebarOpen(false);
-            }}
-            className={selectedComponent === "suggested" ? "active" : ""}
-          >
-            <BsQrCode />
-            کارت ورود به جلسه
-            <span>(آزمون کتبی)</span>
-          </button> */}
-          {/* <button
-            onClick={() => {
-              setSelectedComponent("DocumentReview");
-              setIsSidebarOpen(false);
-            }}
-            className={selectedComponent === "DocumentReview" ? "active" : ""}
-          >
-            <IoDocuments />
-            نتیجه‌ی بررسی مدارک
-            <span className="docNotifNum">1</span>
-          </button> */}
-          {/* <button
-            onClick={() => {
-              setSelectedComponent("news");
-              setIsSidebarOpen(false);
-            }}
-            className={selectedComponent === "news" ? "active" : ""}
-          >
-            <BsQrCode />
-            کارت ورود به جلسه
-            <span>(ارزیابی تکمیلی)</span>
-          </button> */}
-          {/* <button
-            onClick={() => {
-              setSelectedComponent("selection");
-              setIsSidebarOpen(false);
-            }}
-            className={selectedComponent === "selection" ? "active" : ""}
-          >
-            <FaCheckCircle />
-            گزینش
-          </button> */}
+            سنجش شایستگی‌های تخصصی
+          </button>
         </div>
       </div>
     </>
   );
 };
 
-export default ProfileSideBar;
+export default AnnouncementSideBar;
