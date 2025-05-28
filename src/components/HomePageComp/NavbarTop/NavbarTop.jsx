@@ -7,6 +7,7 @@ import { useAuth } from "../../../AuthContext";
 import { FaCircleUser } from "react-icons/fa6";
 import ResponsiveNavbarTop from "./ResponsiveNavbarTop";
 import { FaQuestion } from "react-icons/fa";
+import ProcessDescriptionModal from "./ProcessDescriptionModal/ProcessDescriptionModal";
 
 const NavbarTop = ({
   hideJobSearch = false,
@@ -55,10 +56,12 @@ const NavbarTop = ({
         </div>
 
         <div className="navbarLeftPart">
+          <div className="jobSearchBtn" id="jobSearchBtn">
+            <ProcessDescriptionModal /> {/* اضافه کردن کامپوننت مودال */}
+          </div>
           {showTutorialBtn && (
             <button className="navTotarialBtn" onClick={startIntro}>
               راهنمای سامانه
-              {/* <FaQuestion />   */}
             </button>
           )}
           {!hideJobSearch && (
@@ -85,8 +88,7 @@ const NavbarTop = ({
 
           {user ? (
             <div className="userProfile">
-              <div className="user-info"> 
-                <div className="docNotifNum">1</div>
+              <div className="user-info">
                 <img
                   src="/assets/images/shxfdb.jpg"
                   alt=""
@@ -99,11 +101,9 @@ const NavbarTop = ({
 
               <div className="topNavDropdown-menu">
                 <Link to="/Announcements" className="goToProfileBtn">
-                <span className="docNotifNum">1</span>
                   <FaUser /> اعلانات
                 </Link>
                 <Link to="/profile" className="goToProfileBtn">
-                <span className="docNotifNum">1</span>
                   <FaUser /> حساب کاربری
                 </Link>
                 <button className="exit" onClick={handleLogout}>
@@ -142,4 +142,5 @@ const NavbarTop = ({
     </>
   );
 };
+
 export default NavbarTop;

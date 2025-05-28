@@ -1,0 +1,48 @@
+.process-description-modal {
+  background-color: #04364a !important;
+  border-radius: 10px;
+  padding: 20px;
+
+  .process-description-title {
+    color: #dafffb !important;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .process-description-html {
+    color: #dafffb !important;
+    text-align: right;
+
+    .process-description-content {
+      p {
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+
+      ul {
+        list-style-type: disc;
+        padding-right: 20px;
+        margin-bottom: 15px;
+
+        li {
+          margin-bottom: 5px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .process-description-confirm-btn {
+    background-color: #e55604 !important;
+    color: #dafffb !important;
+    border: none !important;
+    padding: 10px 20px !important;
+    border-radius: 20px !important;
+    font-size: 14px !important;
+    transition: background-color 0.3s !important;
+
+    &:hover {
+      background-color: #c73e00 !important;
+    }
+  }
+}
