@@ -223,11 +223,11 @@ const ExamCard = () => {
                
                 </div>
                 <div className="examCard-Footer">
-                  {!user && (
+                  {/* {!user && (
                     <Link to="/signUpForm" key="signup">
                       <button className="btn1">ثبت‌نام</button>
                     </Link>
-                  )}
+                  )} */}
                   <a
                     href="https://sanjesh.rayanegan.com/login/"
                     target="_blank"

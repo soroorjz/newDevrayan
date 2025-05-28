@@ -2,30 +2,8 @@ import React from "react";
 import "./ExamFormResult.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../../AuthContext";
+import exams from "../../../../exams.json"; // مسیر فایل JSON رو درست کن
 
-const exams = [
-  {
-    id: 1,
-    name: "دوازدهمین آزمون مشترک فراگیر دستگاه‌های اجرایی کشور",
-    jobLoc: "بانکدار گروه امور کامپیوتر و فناوری اطلاعات، البرز،کرج،قلم",
-    num: "۱۰۲۴",
-    date: "۱۴۰۴/۱/۲۵",
-  },
-  {
-    id: 2,
-    name: "دوازدهمین آزمون مشترک فراگیر دستگاه‌های اجرایی کشور",
-    jobLoc: "بانکدار امور مالی، البرز، کرج، قلم",
-    num: "۱۱۹۹",
-    date: "۱۴۰۴/۲/۲۰",
-  },
-  {
-    id: 3,
-    name: "دوازدهمین آزمون مشترک فراگیر دستگاه‌های اجرایی کشور",
-    jobLoc: "بانکدار امور مالی، البرز، کرج، گلشهر",
-    num: "۱۲۰۰",
-    date: "۱۴۰۴/۴/۱۰",
-  },
-];
 
 const ExamFormResult = ({ setShowList }) => {
   const { user } = useAuth();
@@ -39,10 +17,10 @@ const ExamFormResult = ({ setShowList }) => {
     <div className="ResultExam-container">
       <div className="ResultExam-header">
         <div className="ResultExam-header-info">
-          <span className="ResultExamHeaderInfo-name">نام آزمون:</span>
-          <span className="ResultExamHeaderInfo-date">تاریخ آزمون</span>
-          <span className="ResultExamHeaderInfo-jobLocCode">کد شغل محل</span>
-          <span className="ResultExamHeaderInfo-jobLoc">شغل محل</span>
+          <span className="ResultExamHeaderInfo-keyDomain">عنوان آزمون </span>
+          <span className="ResultExamHeaderInfo-keyDomain">حوزه کلیدی</span>
+          <span className="ResultExamHeaderInfo-organization">دستگاه</span>
+          <span className="ResultExamHeaderInfo-keyJob">شغل کلیدی</span>
         </div>
         <button className="ResultExam-close-btn" onClick={handleClose}>
           بستن
@@ -50,16 +28,20 @@ const ExamFormResult = ({ setShowList }) => {
       </div>
       <div className="ResultExam-list">
         {exams.map((exam) => (
-          <div key={exam.id} className="ResultExam-item">
-            <span className="ResultExam-name">{exam.name}</span>
-            <span className="ResultExam-date">{exam.date}</span>
-            <span className="ResultExam-date">{exam.num}</span>
-            <span className="ResultExam-jobLoc">{exam.jobLoc}</span>
+          <div key={exam.examId} className="ResultExam-item">
+            <span className="ResultExam-keyDomain">{exam.examName}</span>
+            <span className="ResultExam-keyDomain">{exam.keyDomain}</span>
+            <span className="ResultExam-organization">{exam.organization}</span>
+            <span className="ResultExam-keyJob">{exam.keyJob}</span>
             <div className="ResultExam-more">
               {user ? (
-                <Link to={`/RegistrationPage?from=exam&examId=${exam.id}`}>
-                  <button>ثبت نام</button>
-                </Link>
+                 <a
+                    href="https://sanjesh.rayanegan.com/login/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button className="btn2">ورود</button>
+                  </a>
               ) : (
                 <Link to="/logIn">
                   <button>ورود به حساب کاربری</button>

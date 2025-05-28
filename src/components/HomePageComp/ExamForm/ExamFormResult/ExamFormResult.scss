@@ -31,8 +31,8 @@ $tablet-resize: 900px;
       font-weight: bold;
       font-size: 14px;
       @include responsive($tablet) {
-        width: 20%; // تقسیم‌بندی برای موبایل و تبلت
-        text-align: center;
+        width: 25%; 
+        // text-align: center;
       }
     }
     .ResultExamHeaderInfo-name {
@@ -91,6 +91,12 @@ $tablet-resize: 900px;
     @include responsive($tablet-resize) {
       flex-direction: row;
       gap: 0;
+      .ResultExam-keyDomain,
+.ResultExam-organization,
+.ResultExam-keyJob,
+.ResultExam-more{
+width: 20%;
+}
     }
     .ResultExam-name {
       font-weight: bold;
