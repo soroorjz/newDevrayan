@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useAuth } from "../../AuthContext";
 import "./RegistrationModals.scss";
+import ProcessDescriptionModal from "../HomePageComp/NavbarTop/ProcessDescriptionModal/ProcessDescriptionModal";
 
 const MySwal = withReactContent(Swal);
 
 const RegistrationModals = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
+  const [showProcessModal, setShowProcessModal] = useState(false); // state برای نمایش مودال
+
+  // تابع برای باز کردن مودال ProcessDescriptionModal
+  window.openProcessDescriptionModal = () => {
+    setShowProcessModal(true);
+  };
+
+  // تابع برای بستن مودال (اختیاری، بسته به طراحی ProcessDescriptionModal)
+  const closeProcessModal = () => {
+    setShowProcessModal(false);
+  };
 
   // تعریف شغل‌های کلیدی برای هر حوزه کلیدی
   const keyJobsByDomain = {
@@ -38,6 +50,14 @@ const RegistrationModals = () => {
         cancelButtonText: "لغو",
         showDenyButton: true,
         denyButtonText: "ایجاد حساب کاربری",
+        customClass: {
+          popup: "registration-modal",
+          title: "registration-modal-title",
+          htmlContainer: "registration-modal-html",
+          confirmButton: "registration-modal-confirm-btn",
+          cancelButton: "registration-modal-cancel-btn",
+          denyButton: "registration-modal-deny-btn",
+        },
       }).then((result) => {
         if (result.isConfirmed) {
           navigate("/logIn");
@@ -53,11 +73,14 @@ const RegistrationModals = () => {
       title: "شرایط و قوانین",
       html: `
         <div class="terms-modal-content">
-          <p>لطفاً شرایط و قوانین زیر را به دقت مطالعه کنید:</p>
+          <p>لطفاً شرایط و قوانین زیر را به دقت مطالعه و تأیید کنید:</p>
           <ul>
-            <li>شما باید در زمان مقرر در آزمون شرکت کنید.</li>
-            <li>هرگونه تقلب منجر به رد صلاحیت شما خواهد شد.</li>
-            <li>اطلاعات شما نزد ما محفوظ خواهد ماند.</li>
+            <li>داوطلب موظف است در زمان مقرر در آزمون شرکت کند.</li>
+            <li>هرگونه تخلف یا تقلب در فرآیند ثبت‌نام یا آزمون منجر به رد صلاحیت داوطلب خواهد شد.</li>
+            <li>اطلاعات شخصی، تحصیلی (دارای مدرک کارشناسی ارشد یا دکتری)، و سوابق کاری (حداقل ۴ سال، شامل حداقل ۲ سال تجربه مدیریتی) باید ارائه شود.</li>
+            <li>محدودیت سنی: حداکثر ۴۰ سال برای دارندگان مدرک کارشناسی ارشد و ۴۵ سال برای دارندگان مدرک دکتری.</li>
+            <li><strong>هشدار:</strong> در صورت عدم احراز شرایط فوق در هر مرحله از فرآیند (از جمله پیش از پرداخت یا پس از آن)، از ادامه فعالیت شما جلوگیری خواهد شد و سوابق فعالیتی شما قابل پیگیری یا استناد نخواهد بود.</li>
+            <li>اطلاعات شما نزد ما محرمانه باقی خواهد ماند و صرفاً برای اهداف این برنامه استفاده می‌شود.</li>
           </ul>
           <div class="checkbox-container">
             <input type="checkbox" id="terms-checkbox" />
@@ -68,10 +91,31 @@ const RegistrationModals = () => {
       showCancelButton: true,
       confirmButtonText: "تأیید",
       cancelButtonText: "انصراف",
+      customClass: {
+        popup: "registration-modal",
+        title: "registration-modal-title",
+        htmlContainer: "registration-modal-html",
+        confirmButton: "registration-modal-confirm-btn",
+        cancelButton: "registration-modal-cancel-btn",
+      },
       preConfirm: () => {
         const checkbox = document.getElementById("terms-checkbox");
         if (!checkbox.checked) {
-          MySwal.showValidationMessage("لطفاً با شرایط و قوانین موافق باشید.");
+          MySwal.showValidationMessage("به منظور ادامه فرآیند، لطفاً شرایط و قوانین را مورد تأیید قرار دهید.");
+          return false;
+        }
+        const userAge = 35;
+        const userEducation = "کارشناسی ارشد";
+        const workExperience = 5;
+        const managementExperience = 2;
+
+        if (
+          (userEducation === "کارشناسی ارشد" && userAge > 40) ||
+          (userEducation === "دکتری" && userAge > 45) ||
+          workExperience < 4 ||
+          managementExperience < 2
+        ) {
+          MySwal.showValidationMessage("شما شرایط سنی، تحصیلی یا سوابق کاری لازم را احراز نکرده‌اید.");
           return false;
         }
         return true;
@@ -80,29 +124,28 @@ const RegistrationModals = () => {
 
     if (!termsResult.isConfirmed) return;
 
-    // مودال دوم: توضیحات با چک‌باکس
+    // مودال دوم: تأیید توضیحات
     const acceptanceResult = await MySwal.fire({
       title: "تأیید توضیحات",
       html: `
         <div class="acceptance-modal-content">
-          <p>لطفاً توضیحات زیر را مطالعه کرده و تأیید کنید:</p>
-          <p>این آزمون به منظور شناسایی مدیران جوان و با استعداد طراحی شده است و شرکت در آن نیازمند رعایت تمامی قوانین و شرایط اعلام‌شده می‌باشد.</p>
-          <div class="checkbox-container">
-            <input type="checkbox" id="acceptance-checkbox" />
-            <label for="acceptance-checkbox">شرایط را مطالعه کرده و مورد پذیرش این‌جانب می‌باشد</label>
-          </div>
+          <p>داوطلب گرامی، لطفاً توضیحات زیر را مطالعه کنید:</p>
+          <p>فرآیند سنجش برنامه "تربیت 500 مدیر جوان و کارآمد" با هدف شناسایی استعدادهای مدیریتی، به‌صورت سه‌مرحله‌ای (سنجش تناسب شغل، شایستگی‌های عمومی و اختصاصی) انجام می‌شود. موفقیت در آزمون‌ها (حداقل 70% و 60% امتیاز در مراحل دوم و سوم)، رعایت محدودیت سنی (40 سال برای ارشد، 45 سال برای دکتری) و داشتن حداقل 4 سال سابقه کاری (شامل 2 سال مدیریتی) الزامی است. انتخاب نهایی توسط سازمان اداری و استخدامی با سهمیه 30% برای زنان انجام می‌شود. در صورت موفقیت، دوره آموزشی شامل کارگاه‌ها و مربی‌گری برگزار خواهد شد.</p>
+          <p><strong>نکته:</strong> عدم کسب حدنصاب در هر مرحله منجر به حذف می‌شود، اما در برخی موارد امکان تکرار وجود دارد. برای اطلاعات بیشتر، <span class="process-description-link" onclick="window.openProcessDescriptionModal()">توضیحات فرایند سنجش</span> را مشاهده کنید.</p>
         </div>
       `,
       showCancelButton: true,
       confirmButtonText: "تأیید",
       cancelButtonText: "انصراف",
+      customClass: {
+        popup: "registration-modal",
+        title: "registration-modal-title",
+        htmlContainer: "registration-modal-html",
+        confirmButton: "registration-modal-confirm-btn",
+        cancelButton: "registration-modal-cancel-btn",
+      },
       preConfirm: () => {
-        const checkbox = document.getElementById("acceptance-checkbox");
-        if (!checkbox.checked) {
-          MySwal.showValidationMessage("لطفاً تأیید کنید که شرایط را مطالعه کرده‌اید.");
-          return false;
-        }
-        return true;
+        return true; // بدون چک‌باکس، فقط تأیید ساده
       },
     });
 
@@ -134,6 +177,13 @@ const RegistrationModals = () => {
       showCancelButton: true,
       confirmButtonText: "تأیید",
       cancelButtonText: "انصراف",
+      customClass: {
+        popup: "registration-modal",
+        title: "registration-modal-title",
+        htmlContainer: "registration-modal-html",
+        confirmButton: "registration-modal-confirm-btn",
+        cancelButton: "registration-modal-cancel-btn",
+      },
       preConfirm: () => {
         const domain = document.getElementById("domain-select").value;
         if (!domain) {
@@ -165,6 +215,13 @@ const RegistrationModals = () => {
       showCancelButton: true,
       confirmButtonText: "تأیید",
       cancelButtonText: "انصراف",
+      customClass: {
+        popup: "registration-modal",
+        title: "registration-modal-title",
+        htmlContainer: "registration-modal-html",
+        confirmButton: "registration-modal-confirm-btn",
+        cancelButton: "registration-modal-cancel-btn",
+      },
       preConfirm: () => {
         const job = document.getElementById("job-select").value;
         if (!job) {
@@ -184,6 +241,13 @@ const RegistrationModals = () => {
       showCancelButton: true,
       confirmButtonText: "بله",
       cancelButtonText: "خیر",
+      customClass: {
+        popup: "registration-modal",
+        title: "registration-modal-title",
+        htmlContainer: "registration-modal-html",
+        confirmButton: "registration-modal-confirm-btn",
+        cancelButton: "registration-modal-cancel-btn",
+      },
     });
 
     if (!cameraResult.isConfirmed) return;
@@ -195,15 +259,47 @@ const RegistrationModals = () => {
       showCancelButton: true,
       confirmButtonText: "بله",
       cancelButtonText: "خیر",
+      customClass: {
+        popup: "registration-modal",
+        title: "registration-modal-title",
+        htmlContainer: "registration-modal-html",
+        confirmButton: "registration-modal-confirm-btn",
+        cancelButton: "registration-modal-cancel-btn",
+      },
     });
 
     if (!micResult.isConfirmed) return;
 
-    // ذخیره وضعیت تأیید در localStorage
-    localStorage.setItem("registrationConfirmed", "true");
+    // مودال جدید: انتقال به درگاه پرداخت با پروسس بار
+    const paymentTransitionResult = await MySwal.fire({
+      title: "انتقال به درگاه پرداخت",
+      html: `
+        <div class="payment-transition-content">
+          <div class="progress-bar"></div>
+          <p>لطفاً چند لحظه صبر کنید...</p>
+        </div>
+      `,
+      showConfirmButton: false, // دکمه تأیید نمایش داده نمی‌شه
+      showCancelButton: false, // دکمه لغو نمایش داده نمی‌شه
+      customClass: {
+        popup: "registration-modal",
+        title: "registration-modal-title",
+        htmlContainer: "registration-modal-html",
+      },
+      timer: 3000, // 3 ثانیه
+      timerProgressBar: true, // نمایش پروگرس بار
+      didOpen: () => {
+        Swal.showLoading(); // فعال کردن انیمیشن بارگذاری
+      },
+      willClose: () => {
+        // بعد از بستن، به درگاه پرداخت هدایت می‌شه
+        localStorage.setItem("registrationConfirmed", "true");
+        navigate("/payment");
+      },
+    });
 
-    // هدایت به کامپوننت PaymentGateway
-    navigate("/payment");
+    // ذخیره وضعیت تأیید در localStorage
+    // (این خط به willClose منتقل شد تا فقط بعد از اتمام پروسس اجرا بشه)
   };
 
   return (
@@ -211,6 +307,7 @@ const RegistrationModals = () => {
       <button className="blur-overlay-button" onClick={showModals}>
         ثبت‌نام در آزمون تست‌های روانشناختی
       </button>
+      {showProcessModal && <ProcessDescriptionModal onClose={closeProcessModal} />}
     </div>
   );
 };
