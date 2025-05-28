@@ -226,13 +226,21 @@ const EmploymentTestsComp = ({ exams, statusTitle, title }) => {
                     <button className="btn1">ثبت‌نام</button>
                   </Link>
                 )}
-                <a
+                {/* <a
                   href={exam.bookletUrl || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <button className="btn2">دفترچه</button>
-                </a>
+                </a> */}
+
+                 <a
+                    href="https://sanjesh.rayanegan.com/login/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button className="btn2">ورود</button>
+                  </a>
                 <Link
                   to={`/examInfo/${exam.examId}`}
                   key={`examInfo-${exam.examId}`}

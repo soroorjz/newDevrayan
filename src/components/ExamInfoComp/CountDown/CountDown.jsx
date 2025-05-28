@@ -232,13 +232,21 @@ const Countdown = ({ registrationDeadline, startDate }) => {
           <span className="countdown-label">ثانیه</span>
         </div>
       </div>
-      <Link
+      {/* <Link
         to={user ? "/RegistrationPage" : "/logIn"}
         className="examSignUpbtn"
         id="RegistrationBtn"
       >
         ثبت‌نام
-      </Link>
+      </Link> */}
+      <a
+                    href="https://sanjesh.rayanegan.com/login/"
+                    target="_blank"
+                    
+                    rel="noopener noreferrer"
+                  >
+                    <button className="examSignUpbtn">ورود</button>
+                  </a>
     </div>
   );
 };

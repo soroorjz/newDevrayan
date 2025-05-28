@@ -17,7 +17,7 @@ const Receipt = ({ onClose }) => {
           ×
         </button>
         <div className="receipt-card-title">
-          <h4>رسید ثبت نام داوطلب</h4>
+          <h4>رسید ثبت نام </h4>
         </div>
         <div className="receipt-header-card">
           <div className="receipt-header-row">
@@ -118,7 +118,7 @@ const Receipt = ({ onClose }) => {
         </div>
         <div className="receipt-info-div-col">
           <div>
-            <small>ثبت نام شما در دوازدهمین آزمون مشترک با موفقیت انجام شد.</small>
+            <small>ثبت نام با موفقیت انجام شد.</small>
           </div>
           <div>
             <small>

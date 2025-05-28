@@ -195,13 +195,13 @@ const ExamInfoComponent = ({
         >
           اطلاعیه‌ها
         </button>
-        <button
+        {/* <button
           onClick={() => setActiveSection("jobs")}
           className={activeSection === "jobs" ? "exam-InfoTab-Active" : ""}
           id="InfojobSearchBtn"
         >
           جست و جوی مشاغل
-        </button>
+        </button> */}
       </nav>
 
       {activeSection === "introduction" && (
