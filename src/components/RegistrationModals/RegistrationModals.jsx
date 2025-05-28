@@ -2,14 +2,36 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import { useAuth } from "../../AuthContext";
 import "./RegistrationModals.scss";
 
 const MySwal = withReactContent(Swal);
 
 const RegistrationModals = () => {
   const navigate = useNavigate();
+  const { user } = useAuth();
 
   const showModals = async () => {
+    // بررسی ورود کاربر
+    if (!user) {
+      await MySwal.fire({
+        title: "نیاز به ورود",
+        text: "جهت ثبت نام در فرایند شناسایی پانصد مدیر جوان لازم است وارد حساب کاربری خود شوید.",
+        showCancelButton: true,
+        confirmButtonText: "ورود به حساب کاربری",
+        cancelButtonText: "لغو",
+        showDenyButton: true,
+        denyButtonText: "ایجاد حساب کاربری",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate("/logIn");
+        } else if (result.isDenied) {
+          navigate("/signUpForm");
+        }
+      });
+      return;
+    }
+
     // مودال اول: شرایط و قوانین
     const termsResult = await MySwal.fire({
       title: "شرایط و قوانین",
@@ -64,8 +86,11 @@ const RegistrationModals = () => {
 
     if (!micResult.isConfirmed) return;
 
-    // اگر همه مراحل تأیید شد، هدایت به صفحه پرداخت
-    // window.location.href = "/behpardakht-Ui-main/index.html";
+    // ذخیره وضعیت تأیید در localStorage
+    localStorage.setItem("registrationConfirmed", "true");
+
+    // هدایت به کامپوننت PaymentGateway
+    navigate("/payment");
   };
 
   return (

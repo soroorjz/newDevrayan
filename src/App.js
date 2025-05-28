@@ -20,6 +20,7 @@ import ExamCardSkeleton from "./pages/EmploymentTests/ExamCardSkeleton";
 import CardListSkeleton from "./components/HomePageComp/ExamCardPart/CardListSkeleton";
 import ErrorBoundary from "./components/ErrorBoundary";
 import Announcements from "./pages/Announcements/Announcements";
+import PaymentGateway from "./components/PaymentGateway/PaymentGateway";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
             <Route path="/EmploymentTests" element={<EmploymentTests />} />
             <Route path="/ReportTracking" element={<ReportTracking />} />
             <Route path="/RegistrationPage" element={<RegistrationPage />} />
+            <Route path="/payment" element={<PaymentGateway />} />
             <Route path="/ForgotPassword" element={<ForgotPassword />} />
             <Route path="/ChangePassword" element={<ChangePassword />} />
           </Routes>

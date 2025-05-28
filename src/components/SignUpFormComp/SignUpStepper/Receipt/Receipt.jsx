@@ -1,54 +1,45 @@
 import React from "react";
 import candidateData from "../../../ExamCardFile/data.json";
-import { Container, Row, Col, Card, Image } from "react-bootstrap";
+import { useNavigate } from "react-router-dom"; // برای ناوبری
 import "./Receipt.scss";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 const Receipt = ({ onClose }) => {
+  const navigate = useNavigate(); // تعریف navigate برای هدایت
+
+  const handleConfirm = () => {
+    navigate("/"); // هدایت به صفحه اصلی
+  };
+
   return (
-    <Container fluid className="receipt-modal">
-      <Container className="mt-3 Receipt-card-body position-relative">
-        {/* دکمه ضربدر */}
-        <button className="close-btn" onClick={onClose}>
-          &times;
+    <div className="receipt-modal">
+      <div className="receipt-card-body">
+        <button className="receipt-close-btn" onClick={onClose}>
+          ×
         </button>
-
-        <Row className="card-title">
+        <div className="receipt-card-title">
           <h4>رسید ثبت نام داوطلب</h4>
-        </Row>
-
-        <Card className="header-card">
-          <Card.Body>
-            <Row className="headerRow">
-              <Col md={9}>
-                <Row className="d-flex justify-content-center">
-                  <div className="applicant-code mt-3">
-                    <strong className="row d-flex justify-content-center">
-                      نام و نام خانوادگی{" "}
-                      <span>
-                        {candidateData.firstName} {candidateData.lastName}
-                      </span>
-                    </strong>
-                  </div>
-                </Row>
-              </Col>
-              <Col md={3}>
-                <Row className="d-flex justify-content-center ">
-                  <div className="personal-img-div d-flex justify-content-center">
-                    <Image
-                      src={candidateData.logo}
-                      alt="personal photo"
-                      fluid
-                    />
-                  </div>
-                </Row>
-              </Col>
-            </Row>
-          </Card.Body>
-        </Card>
-
-        <Row className="info-div-col personalInfo">
-          <Col md={3} className="info-div">
+        </div>
+        <div className="receipt-header-card">
+          <div className="receipt-header-row">
+            <div className="receipt-col-9">
+              <div className="receipt-applicant-code">
+                <strong>
+                  نام و نام خانوادگی{" "}
+                  <span>
+                    {candidateData.firstName} {candidateData.lastName}
+                  </span>
+                </strong>
+              </div>
+            </div>
+            <div className="receipt-col-3">
+              <div className="receipt-personal-img-div">
+                <img src={candidateData.logo} alt="personal photo" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="receipt-info-div-col personal-info">
+          <div className="receipt-info-div">
             <div className="mt-1">
               <label>
                 کد ملی: <span>{candidateData.nationalCode}</span>
@@ -79,9 +70,8 @@ const Receipt = ({ onClose }) => {
                 تلفن: <span>{candidateData.phone}</span>
               </label>
             </div>
-          </Col>
-
-          <Col md={3} className="info-div">
+          </div>
+          <div className="receipt-info-div">
             <div className="mt-1">
               <label>
                 شماره شناسنامه: <span>{candidateData.BirthCertificate}</span>
@@ -112,9 +102,8 @@ const Receipt = ({ onClose }) => {
                 شماره همراه: <span>{candidateData.mobile}</span>
               </label>
             </div>
-          </Col>
-
-          <Col md={3} className="info-div">
+          </div>
+          <div className="receipt-info-div">
             <div className="mt-1">
               <label>
                 کد پستی: <span>{candidateData.postCode}</span>
@@ -125,28 +114,28 @@ const Receipt = ({ onClose }) => {
                 آدرس: <span className="wrap-text">{candidateData.address}</span>
               </label>
             </div>
-          </Col>
-        </Row>
-
-        <div className="info-div-col">
-          <Row>
-            <small>
-              ثبت نام شما در دوازدهمین آزمون مشترک با موفقیت انجام شد.
-            </small>
-          </Row>
-          <Row>
+          </div>
+        </div>
+        <div className="receipt-info-div-col">
+          <div>
+            <small>ثبت نام شما در دوازدهمین آزمون مشترک با موفقیت انجام شد.</small>
+          </div>
+          <div>
             <small>
               مبلغ پرداخت شده: <span>{candidateData.amountPaid}</span>
             </small>
-          </Row>
-          <Row>
+          </div>
+          <div>
             <label>
-              کد رهگیری پرداخت شما: <span>{candidateData.paymentCode}</span>
+              کد رهگیری پرداخت شما: <span>561645</span>
             </label>
-          </Row>
+          </div>
         </div>
-      </Container>
-    </Container>
+        <div className="receipt-confirm-button">
+          <button onClick={handleConfirm}>تأیید</button>
+        </div>
+      </div>
+    </div>
   );
 };
 

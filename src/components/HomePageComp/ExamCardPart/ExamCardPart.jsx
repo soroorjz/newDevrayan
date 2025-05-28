@@ -6,12 +6,17 @@ import { Link } from "react-router";
 import RegistrationModals from "../../RegistrationModals/RegistrationModals";
 
 const ExamCardPart = () => {
+  // بررسی وضعیت تأیید از localStorage
+  const isRegistrationConfirmed = localStorage.getItem("registrationConfirmed") === "true";
+
   return (
     <div className="examCardPart-Container">
-      {/* لایه بلور و دکمه */}
-      <div className="blur-overlay">
-        <RegistrationModals />
-      </div>
+      {/* لایه بلور و دکمه فقط اگه تأیید نشده باشه نمایش داده می‌شه */}
+      {!isRegistrationConfirmed && (
+        <div className="blur-overlay">
+          <RegistrationModals />
+        </div>
+      )}
 
       <div className="examCardPart-Title">
         <h1>آزمون‌های استخدامی</h1>
