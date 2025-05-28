@@ -31,7 +31,7 @@ const SpecializedPart = () => {
               exit={{ height: 0, opacity: 0, y: -10 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
             >
-              لطفاً در زمان و مکان مشخص‌شده حاضر شوید . عدم حضور ممکن است منجر به رد نهایی شود.
+              لطفاً در زمان و مکان مشخص‌شده حاضر شوید . عدم حضور ممکن است منجر به پایان فرایند گردد.
             </motion.p>
           )}
         </AnimatePresence>
