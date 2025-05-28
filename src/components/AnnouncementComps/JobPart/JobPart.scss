@@ -1,0 +1,87 @@
+.exam-status-table-container {
+    width: 80%;
+    margin: 65px auto 20px;
+
+  .exam-status-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+
+    thead {
+      tr {
+        background-color: 
+#04364a;
+color: #fff;
+        th {
+          padding: 15px;
+          font-weight: bold;
+        //   color: #333;
+          font-size: 14px;
+          text-align: center;
+
+          &.exam-title-column {
+            width: 40%;
+          }
+
+          &.exam-status-column {
+            width: 30%;
+          }
+
+          &.exam-action-column {
+            width: 30%;
+          }
+        }
+      }
+    }
+
+    tbody {
+      .exam-row {
+        border-bottom: 1px solid #ddd;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        td {
+          padding: 15px;
+          font-size: 14px;
+          color: #333;
+          text-align: center;
+
+          &.exam-title {
+            font-weight: bold;
+          }
+
+          &.exam-status {
+            color: #666;
+          }
+
+          &.exam-action {
+            .exam-completed-icon {
+              color: #00c851;
+              font-size: 20px;
+            }
+
+            .exam-action-button {
+              display: inline-block;
+              padding: 8px 15px;
+              background-color: #3490dc;
+              color: white;
+              text-decoration: none;
+              border-radius: 5px;
+              font-size: 14px;
+              transition: background-color 0.2s;
+
+              &:hover {
+                background-color: #2779bd;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -3,12 +3,13 @@ import "./AnnouncementMain.scss";
 
 import { IoMdHome } from "react-icons/io";
 import { Link } from "react-router";
+import JobPart from "./JobPart/JobPart";
 
 const AnnouncementMain = ({ selectedComponent }) => {
   let content;
   switch (selectedComponent) {
     case "job":
-      content = <p>1</p> ;
+      content = <JobPart/> ;
       break;
     case "General":
       content = <p>2</p>;
