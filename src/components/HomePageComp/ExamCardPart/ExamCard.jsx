@@ -226,11 +226,11 @@ const ExamCard = () => {
                     </Link>
                   )}
                   <a
-                    href={examCard.bookletUrl || "#"}
+                    href="https://sanjesh.rayanegan.com/login/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <button className="btn2">دفترچه</button>
+                    <button className="btn2">ورود</button>
                   </a>
                   <Link
                     to={`/examInfo/${examCard.examId}`}

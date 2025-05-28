@@ -1,3 +1,5 @@
+//#region for dynamic
+
 // import React from "react";
 // import { Swiper, SwiperSlide } from "swiper/react";
 // import "swiper/css";
@@ -143,7 +145,7 @@
 // };
 
 // export default EmploymentTestsComp;
-
+//#endregionendregion
 
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";

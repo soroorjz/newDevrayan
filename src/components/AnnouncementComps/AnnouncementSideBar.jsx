@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { BsQrCode } from "react-icons/bs";
 import { FaBookReader, FaCheckCircle } from "react-icons/fa";
+import { FaPuzzlePiece } from "react-icons/fa";
+import { GiSkills } from "react-icons/gi";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { IoClose, IoDocuments } from "react-icons/io5";
 import { FaUserPen, FaBars } from "react-icons/fa6";
@@ -68,7 +70,7 @@ const AnnouncementSideBar = ({ selectedComponent, setSelectedComponent }) => {
             }}
             className={selectedComponent === "job" ? "active" : ""}
           >
-            <FaUserPen />
+            <FaPuzzlePiece />
             سنجش تناسب شغل با شخصیت
           </button>
           <button
@@ -78,7 +80,7 @@ const AnnouncementSideBar = ({ selectedComponent, setSelectedComponent }) => {
             }}
             className={selectedComponent === "General" ? "active" : ""}
           >
-            <RiLockPasswordLine />
+            <GiSkills />
             سنجش شایستگی‌های عمومی
           </button>
           <button

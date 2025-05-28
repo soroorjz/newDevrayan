@@ -9,7 +9,7 @@ const Banner = () => {
       </div>
       <div className="banner-SloganPart">
         <div className="sloganTitle">
-          <h1>سامانه‌ی جامع اطلاع‌رسانی و ثبت‌نام آزمون‌های استخدامی</h1>
+          <h1>سامانه‌ی جامع آموزش، تربیت و توسعه پانصد مدیر برتر</h1>
 
           <p>
             <FaCheck />

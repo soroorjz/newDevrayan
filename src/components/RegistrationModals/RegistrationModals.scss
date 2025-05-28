@@ -1,0 +1,61 @@
+.registration-modals-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .blur-overlay-button {
+    background-color: #04364a;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #e55604;
+    }
+  }
+}
+
+/* استایل برای محتوای مودال‌ها */
+.terms-modal-content {
+  text-align: right;
+  font-family: "Vazir", sans-serif; /* فرض می‌کنیم فونت فارسی داری */
+  direction: rtl;
+
+  p {
+    margin-bottom: 15px;
+    color: #333;
+  }
+
+  ul {
+    margin-bottom: 20px;
+    padding-right: 20px;
+
+    li {
+      margin-bottom: 10px;
+      color: #555;
+    }
+  }
+
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    label {
+      font-size: 16px;
+      color: #333;
+      cursor: pointer;
+    }
+  }
+}
