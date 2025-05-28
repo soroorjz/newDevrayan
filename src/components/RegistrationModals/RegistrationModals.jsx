@@ -65,7 +65,7 @@ const RegistrationModals = () => {
     if (!micResult.isConfirmed) return;
 
     // اگر همه مراحل تأیید شد، هدایت به صفحه پرداخت
-    window.location.href = "/behpardakht-Ui-main/index.html";
+    // window.location.href = "/behpardakht-Ui-main/index.html";
   };
 
   return (
