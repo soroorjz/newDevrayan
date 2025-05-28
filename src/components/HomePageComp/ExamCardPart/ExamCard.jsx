@@ -212,6 +212,9 @@ const ExamCard = () => {
                   <div className="examCard-Title">
                     <h2 className="examCard-Title-H">{examCard.examName}</h2>
                   </div>
+                  <div className="examType">
+                    <p>{examCard.examType}</p>
+                  </div>
                 </div>
                 <div className="examCard-details">
                   <p className="examCard-Status detail">

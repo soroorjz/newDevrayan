@@ -2,7 +2,8 @@
   {
     "examId": 1,
     "examName": "آزمون تفکر سیستمی",
-    "examStatus": "در حال ثبت‌نام",
+    "examType":"عمومی",
+    "examStatus": "درحال برگزاری",
     "startDate": "1404/03/01",
     "endDate": "1404/05/15",
     "cardIssueDate": "1404/06/20",
@@ -13,7 +14,8 @@
   {
     "examId": 2,
     "examName": "تست ام ام پی آی 2 (MMPI-2)",
-    "examStatus": "در انتظار صدور کارت",
+    "examType":"اختصاصی",
+    "examStatus": "اتمام برگزاری",
     "startDate": "1404/03/01",
     "endDate": "1404/03/10",
     "cardIssueDate": "1404/03/15",
@@ -24,7 +26,8 @@
   {
     "examId": 3,
     "examName": " (GMAT) آزمون جی مت",
-    "examStatus": "برگزار شده",
+    "examType":"عمومی",
+    "examStatus": "درحال برگزاری",
     "startDate": "1403/12/01",
     "endDate": "1403/12/15",
     "cardIssueDate": "1403/12/20",
@@ -35,7 +38,8 @@
   {
     "examId": 4,
     "examName": "تست نئو (NEO Personality Inventory - Revised | NEO-PI-R)",
-    "examStatus": "در حال آماده‌سازی",
+    "examType":"اختصاصی",
+    "examStatus": "درحال برگزاری",
     "startDate": "1404/04/01",
     "endDate": "1404/04/15",
     "cardIssueDate": "1404/04/20",

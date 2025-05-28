@@ -39,19 +39,28 @@ $tablet-resize: 900px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 15%;
-        .examCard-Logo {
-          img {
-            width: 120px;
-            height: 120px;
-          }
-        }
+       height: 45%;
+       justify-content: space-between;
+        // .examCard-Logo {
+        //   img {
+        //     width: 120px;
+        //     height: 120px;
+        //   }
+        // }
         .examCard-Title {
           font-size: 16px;
           margin: 10px 0;
           text-align: center;
           .examCard-Title-H {
             font-size: 24px !important;
+          }
+        }
+        .examType{
+          p{
+            color: #fff;
+    background-color: #a1c0b7;
+    padding: 5px 20px;
+    border-radius: 30px;
           }
         }
       }
