@@ -4,6 +4,8 @@ import "./AnnouncementMain.scss";
 import { IoMdHome } from "react-icons/io";
 import { Link } from "react-router";
 import JobPart from "./JobPart/JobPart";
+import GeneralPart from "./GeneralPart/GeneralPart";
+import SpecializedPart from "./SpecializedPart/SpecializedPart";
 
 const AnnouncementMain = ({ selectedComponent }) => {
   let content;
@@ -12,13 +14,13 @@ const AnnouncementMain = ({ selectedComponent }) => {
       content = <JobPart/> ;
       break;
     case "General":
-      content = <p>2</p>;
+      content = <GeneralPart/>;
       break;
     case "Specialized":
-      content = <p>3</p>;
+      content = <SpecializedPart/>;
       break;
     default:
-      content = <p>1</p> ; // پیش‌فرض به JobAssessment تغییر کرد
+      content =<JobPart/>
   }
 
   return (

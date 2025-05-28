@@ -1,0 +1,46 @@
+.selection-container {
+  padding: 20px;
+  text-align: center;
+  margin-top: 150px;
+  .selection {
+    svg {
+          font-size: 45px;
+    color: #04364a;
+    margin-bottom: 20px;
+    }
+
+    p {
+      color: #04364a;
+      font-weight: 400;
+      margin-bottom: 20px;
+      text-align: center;
+
+      .bold {
+        color: #e55604;
+      }
+    }
+
+    .selection-details-button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      background-color: #04364a;
+
+      &:hover {
+        background-color: #e55604;
+      }
+    }
+
+    .selection-details {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #7f8c8d;
+      line-height: 1.6;
+      text-align: center;
+    }
+  }
+}
