@@ -19,13 +19,15 @@ const ExamCardPart = () => {
       )}
 
       <div className="examCardPart-Title">
-        <h1>آزمون‌های استخدامی</h1>
-        <Link to="/EmploymentTests">
+        <h1>
+          آزمون‌های روانشناختی
+          </h1>
+        {/* <Link to="/EmploymentTests">
           <button>
             مشاهده‌ همه
             <FaAngleLeft />
           </button>
-        </Link>
+        </Link> */}
       </div>
       <div className="examCards">
         <ExamCard />

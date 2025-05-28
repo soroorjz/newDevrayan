@@ -50,11 +50,26 @@ $tablet-resize: 900px;
           align-items: flex-start;
       }
       h1 {
-        font-size: 31px;
+        font-size: 25px;
         line-height: 35px;
         margin-bottom: 66px;
         color: #04364a;
         text-align: center;
+        width: 100%;
+        p{
+          color: #04364a;
+        text-align: center;
+        font-weight: 600;
+        font-size: 25px;
+        }
+
+        @include responsive($tablet-resize) {
+       font-size: 31px;
+       p{
+       
+        font-size: 31px;
+        }
+    }
       }
       p {
         display: flex;
