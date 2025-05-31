@@ -23,14 +23,14 @@ const Faq = () => {
         >
           ثبت‌نام
         </button>
-        <button
+        {/* <button
           className={
             selectedCategory === "کارت ورود به آزمون" ? "categoryActive" : ""
           }
           onClick={() => filterQuestionsByCategory("کارت ورود به آزمون")}
         >
           کارت ورود به آزمون
-        </button>
+        </button> */}
         <button
           className={selectedCategory === "حساب کاربری" ? "categoryActive" : ""}
           onClick={() => filterQuestionsByCategory("حساب کاربری")}
