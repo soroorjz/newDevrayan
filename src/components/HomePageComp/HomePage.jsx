@@ -139,6 +139,14 @@ const HomePage = () => {
       <div id="home">
         <Banner />
       </div>
+      <a
+        href="https://elearning.rayanegan.com/"
+        className="homeLinkBtn"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span className="text">ورود به برنامه توسعه</span>
+      </a>
       <div id="ExamCardPart">
         <ExamCardPart />
       </div>

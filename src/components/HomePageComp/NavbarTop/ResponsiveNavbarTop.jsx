@@ -92,13 +92,13 @@ const ResponsiveNavbarTop = ({
             </button>
           )}
 
-          {!hideRepotBtn && user && (
+          {/* {!hideRepotBtn && user && (
             <div className="sideBar-JobSearchBtn">
               <Link to="/ReportForm">
                 <button>ثبت اعتراض</button>
               </Link>
             </div>
-          )}
+          )} */}
           {showReportTrackingBtn && (
             <div className="sideBar-JobSearchBtn">
               <button>

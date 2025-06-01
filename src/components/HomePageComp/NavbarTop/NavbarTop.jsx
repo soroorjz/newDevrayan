@@ -70,13 +70,13 @@ const NavbarTop = ({
             </div>
           )}
 
-          {!hideRepotBtn && user && (
+          {/* {!hideRepotBtn && user && (
             <div className="jobSearchBtn" id="reportBtn">
               <Link to="/ReportForm">
                 <button>ثبت اعتراض</button>
               </Link>
             </div>
-          )}
+          )} */}
 
           {showReportTrackingBtn && (
             <div className="jobSearchBtn">
